@@ -16,12 +16,12 @@ export default function NavBar() {
   window.addEventListener('scroll', changeBackground);
 
   return (
-    <div className='flex justify-between -mt-14'>
+    <div className='flex justify-between -mt-14 z-40'>
       <container
         className={
           navbar
-            ? 'flex justify-between p-4 fixed inset-x-0 pt-6 pb-4 bgph activeback'
-            : 'flex justify-between p-4 fixed inset-x-0 pt-6 pb-4 bgph'
+            ? 'flex justify-center  fixed inset-x-0 pt-6 pb-4 bgph activeback'
+            : 'flex justify-center fixed inset-x-0 pt-6 pb-4 bgph p-12'
         }>
         <div className='flex items-center font-trueno'>
           <h2 className='text-4xl logo'>TECH COLAB / </h2>
@@ -29,7 +29,7 @@ export default function NavBar() {
         </div>
         <div className=''>
           <SLink
-            className='p-5 cursor-pointer'
+            className='p-5 cursor-pointer hover:underline'
             activeClass='active'
             to='welcome'
             spy={true}
@@ -39,7 +39,7 @@ export default function NavBar() {
             HOME
           </SLink>
           <SLink
-            className='p-5 cursor-pointer'
+            className='p-5 cursor-pointer hover:underline'
             activeClass='active'
             to='project'
             spy={true}
@@ -49,7 +49,7 @@ export default function NavBar() {
             PROJECTS
           </SLink>
           <SLink
-            className='p-5 cursor-pointer'
+            className='p-5 cursor-pointer hover:underline'
             activeClass='active'
             to='student'
             spy={true}
@@ -60,7 +60,7 @@ export default function NavBar() {
           </SLink>
 
           <SLink
-            className='p-5 cursor-pointer'
+            className='p-5 cursor-pointer hover:underline'
             activeClass='active'
             to='contact'
             spy={true}
@@ -70,7 +70,7 @@ export default function NavBar() {
             CONTACT
           </SLink>
           <SLink
-            className='p-5 cursor-pointer'
+            className='p-5 cursor-pointer hover:underline'
             activeClass='active'
             to='navbar'
             spy={true}
@@ -93,7 +93,7 @@ export default function NavBar() {
           </NavLink>
           <NavLink to='/' className='p-4'></NavLink> */}
           <Link
-            className='p-5'
+            className='p-5 hover:underline'
             to={{ pathname: 'https://www.ara.ac.nz' }}
             target='_blank'>
             ARA

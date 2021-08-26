@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default {
   name: 'project',
   title: 'Project',
@@ -8,8 +9,21 @@ export default {
       type: 'string',
     },
     {
-      name: 'date',
-      type: 'datetime',
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+    },
+    {
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'place',
@@ -25,18 +39,13 @@ export default {
       type: 'string',
       options: {
         list: [
-          { value: 'personal', title: 'Personal' },
-          { value: 'client', title: 'Client' },
-          { value: 'school', title: 'School' },
+          { value: 'Capstone project', title: 'Capstone Project' },
+          { value: 'Tech Colab Project', title: 'Tech Colab Project' },
         ],
       },
     },
     {
       name: 'link',
-      type: 'url',
-    },
-    {
-      name: 'git',
       type: 'url',
     },
     {

@@ -10,6 +10,7 @@ export default function Welcome() {
           <p className='text-xs logo-add p-4'>Powered by Ara</p>
         </div> */}
         <NavBar />
+        <svg class='animate-bounce w-6 h-6'></svg>
       </container>
     </div>
   );

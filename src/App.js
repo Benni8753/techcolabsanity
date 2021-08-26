@@ -6,7 +6,6 @@ import Project from './components/Project';
 import Projects from './components/Projects';
 import Students from './components/Students';
 import Student from './components/Student';
-import NavBar from './components/NavBar';
 import Welcome from './components/Welcome';
 //NavBar and Footer are always there anyway
 
@@ -14,8 +13,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <Welcome />
-      <Project />
-      <Student />
+      <Projects />
+      <Students />
       <Contact />
       <Switch>
         <Route component={Home} path='/' exact />
