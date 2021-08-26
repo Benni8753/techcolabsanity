@@ -1,3 +1,36 @@
+/*
+------COLOUR SCHEME---------
+Name: Tufts Blue
+Hex: #3C99DC
+RGB: (60, 153, 220)
+CMYK: 0.727, 0.304, 0, 0.137
+
+
+Name: Maya Blue
+Hex: #66D3FA
+RGB: (102, 211, 250)
+CMYK: 0.592, 0.156, 0, 0.019
+
+
+Name: Water
+Hex: #D5F3FE
+RGB: (213, 243, 254)
+CMYK: 0.161, 0.043, 0, 0.003
+
+
+Name: Lapis Lazuli
+Hex: #2565AE
+RGB: (37, 101, 174)
+CMYK: 0.787, 0.419, 0, 0.317
+
+
+
+Name: Yale Blue
+Hex: #0F5298
+RGB: (15, 82, 152)
+CMYK: 0.901, 0.460, 0, 0.403
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;1,300;1,400;1,900&display=swap');
 /* font-family: 'Chivo', sans-serif; */
 
@@ -7,5 +40,41 @@
 
 body {
   font-family: Chivo, sans-serif;
-  font-weight: 400;
+  font-weight: 700;
+  color: white;
+}
+
+.bg-fixed {
+  background-image: url('./_images/landing-background.jpeg');
+  height: 60rem;
+}
+
+.logo-add {
+  width: 90px;
+}
+
+.font-trueno {
+  font-family: 'trueno-bd', sans-serif;
+  font-weight: 700;
+}
+
+.test {
+  height: 100rem;
+  background-color: blue;
+}
+
+.bgph {
+  top: -5px;
+}
+
+.bgph.logo {
+  color: red;
+}
+
+.bgph.activeback {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(213, 243, 254),
+    rgb(60, 153, 220)
+  );
 }

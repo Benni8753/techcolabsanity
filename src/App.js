@@ -6,11 +6,17 @@ import Project from './components/Project';
 import Projects from './components/Projects';
 import Students from './components/Students';
 import Student from './components/Student';
+import NavBar from './components/NavBar';
+import Welcome from './components/Welcome';
 //NavBar and Footer are always there anyway
 
 export default function App() {
   return (
     <BrowserRouter>
+      <Welcome />
+      <Project />
+      <Student />
+      <Contact />
       <Switch>
         <Route component={Home} path='/' exact />
         <Route component={About} path='/about' />
@@ -19,6 +25,7 @@ export default function App() {
         <Route component={Students} path='/student/:slug' />
         <Route component={Student} path='/student' />
         <Route component={Contact} path='/contact' />
+        {/* <Route  path='https://www.ara.ac.nz/' /> */}
       </Switch>
     </BrowserRouter>
   );
