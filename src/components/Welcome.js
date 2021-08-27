@@ -1,6 +1,6 @@
 import React from 'react';
-import NavBar from './NavBar';
-import Navbartest from './Navbartest'
+import NavBar from './NavBarOld';
+import Navbartest from './NavBar'
 
 export default function Welcome() {
   return (

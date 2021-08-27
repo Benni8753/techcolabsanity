@@ -133,5 +133,12 @@ body {
   );
 }
 
+.st-back {
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 11%,
+    rgba(1, 8, 76, 1) 100%
+  );
+}
 /* 
 #4fc4c8 */

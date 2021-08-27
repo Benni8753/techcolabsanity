@@ -37,7 +37,7 @@ export default function Projects() {
                   to={'/project/' + project.slug.current}
                   key={project.slug.current}>
                   <span
-                    className='block h-96 relative rounded shadow leading-snug bg-white border-l-8 border-indigo-100'
+                    className='block h-96 relative rounded shadow leading-snug'
                     key={index}>
                     <img
                       src={project.mainImage.asset.url}
@@ -51,7 +51,9 @@ export default function Projects() {
                     </span> */}
                   </span>
                   <div className='image-overlay z-40'>
-                    <div className='image-title text-5xl'>{project.title}</div>
+                    <div className='italic image-title text-5xl'>
+                      {project.title}
+                    </div>
                   </div>
                 </Link>
               </article>
