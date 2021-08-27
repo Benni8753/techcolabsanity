@@ -7,11 +7,15 @@ import Projects from './components/Projects';
 import Students from './components/Students';
 import Student from './components/Student';
 import Welcome from './components/Welcome';
+import Navbartest from './components/Navbartest';
+import NavBar from './components/NavBar';
 //NavBar and Footer are always there anyway
 
 export default function App() {
   return (
     <BrowserRouter>
+      <Navbartest />
+      {/* <NavBar /> */}
       <Welcome />
       <Projects />
       <Students />

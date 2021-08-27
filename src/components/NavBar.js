@@ -16,18 +16,18 @@ export default function NavBar() {
   window.addEventListener('scroll', changeBackground);
 
   return (
-    <div className='flex justify-between -mt-14 z-40'>
+    <div className='flex justify-between -mt-14 z-40 min-h-screen items-center'>
       <container
         className={
           navbar
-            ? 'flex justify-center  fixed inset-x-0 pt-6 pb-4 bgph activeback'
-            : 'flex justify-center fixed inset-x-0 pt-6 pb-4 bgph p-12'
+            ? 'flex justify-between  fixed inset-x-0 bgph activeback pt-6 pb-0 pr-52 pl-52'
+            : 'flex justify-between fixed inset-x-0 bgph pt-6 pb-0 pr-52 pl-52'
         }>
-        <div className='flex items-center font-trueno'>
-          <h2 className='text-4xl logo'>TECH COLAB / </h2>
+        <div className='flex items-center font-trueno -mt-2 '>
+          <h2 className='text-4xl logo '>TECH COLAB / </h2>
           <p className='text-xs logo-add p-4'>Powered by Ara</p>
         </div>
-        <div className=''>
+        <div className='nav-links'>
           <SLink
             className='p-5 cursor-pointer hover:underline'
             activeClass='active'

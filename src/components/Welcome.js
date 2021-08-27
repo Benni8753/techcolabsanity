@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar';
+import Navbartest from './Navbartest'
 
 export default function Welcome() {
   return (
@@ -9,7 +10,8 @@ export default function Welcome() {
           <h2 className='text-4xl'>TECH COLAB / </h2>
           <p className='text-xs logo-add p-4'>Powered by Ara</p>
         </div> */}
-        <NavBar />
+        {/* <NavBar /> */}
+        {/* <Navbartest /> */}
         <svg class='animate-bounce w-6 h-6'></svg>
       </container>
     </div>

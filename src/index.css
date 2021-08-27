@@ -73,9 +73,10 @@ body {
 .bgph.activeback {
   background-image: linear-gradient(
     to bottom right,
-    rgb(213, 243, 254),
-    rgb(60, 153, 220)
+    rgb(79, 196, 200),
+    rgb(15, 82, 152)
   );
+  transition: all 2200ms;
 }
 
 .image {
@@ -89,7 +90,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 8, 76, 1) 0%,
+    rgb(199, 4, 112, 0.9) 5%,
+    rgba(1, 8, 76, 0.6) 100%
+  );
   color: #fff;
   font-family: 'Quicksand', sans-serif;
   display: flex;
@@ -103,3 +109,29 @@ body {
 .image-overlay:hover {
   opacity: 1;
 }
+
+.navbar-test {
+  width: 95%;
+}
+
+.section {
+  margin: 0;
+  opacity: 0.9;
+  transition: all 700ms;
+}
+.section.open {
+  margin: 20px 0;
+  opacity: 0.9;
+}
+
+.pj-back {
+  background: linear-gradient(
+    0deg,
+    rgba(1, 8, 76, 1) 0%,
+    rgba(0, 107, 201, 1) 53%,
+    rgba(1, 8, 76, 1) 100%
+  );
+}
+
+/* 
+#4fc4c8 */

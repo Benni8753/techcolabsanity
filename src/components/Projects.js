@@ -25,7 +25,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <main id='project' className='bg-blue-900 min-h-screen p-12'>
+    <main id='project' className='pj-back min-h-screen p-12'>
       <section className='container mx-auto'>
         <h1 className='text-xl flex justify-center m-10'>PROJECTS</h1>
         <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 '>
