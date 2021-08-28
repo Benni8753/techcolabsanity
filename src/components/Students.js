@@ -9,7 +9,7 @@ export default function Students() {
     sanityClient
       .fetch(
         `*[_type == "student"]{
-        title,
+        name,
         slug,
         mainImage{
           asset->{
@@ -51,7 +51,9 @@ export default function Students() {
                     </span> */}
                   </span>
                   <div className='image-overlay z-40'>
-                    <div className='italic image-title text-5xl'>{student.title}</div>
+                    <div className='italic image-title text-5xl'>
+                      {student.name}
+                    </div>
                   </div>
                 </Link>
               </article>

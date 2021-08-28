@@ -44,11 +44,6 @@ export default function Projects() {
                       alt={project.mainImage.alt}
                       className='w-full h-full rounded-r object-cover absolute'
                     />
-                    {/* <span className='block relative h-full flex justify-end items-end pr-5 pb-4'>
-                      <h3 className='text-gray-800 text-lg font-blog px-3 py-4 bg-blue-700 text-red-100 bg-opacity-75 rounded'>
-                        {project.title}
-                      </h3>
-                    </span> */}
                   </span>
                   <div className='image-overlay z-40'>
                     <div className='italic image-title text-5xl'>

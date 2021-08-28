@@ -13,12 +13,6 @@ import NavBar from './components/NavBar';
 export default function App() {
   return (
     <BrowserRouter>
-      {/* <Navbartest /> */}
-      <NavBar />
-      <Welcome />
-      <Projects />
-      <Students />
-      <Contact />
       <Switch>
         <Route component={Home} path='/' exact />
         <Route component={About} path='/about' />

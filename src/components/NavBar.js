@@ -19,8 +19,8 @@ export default function NavBar() {
     <nav
       className={
         navbar
-          ? 'fixed right-0 left-0fixed inset-x-0 bgph  z-50 activeback section.open '
-          : 'fixed right-0 left-0fixed inset-x-0 bgph z-50 section'
+          ? 'fixed right-0 left-0fixed inset-x-0 bgph  z-30 activeback section.open '
+          : 'fixed right-0 left-0fixed inset-x-0 bgph z-30 section'
       }>
       <section className='container mx-auto'>
         <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 '>

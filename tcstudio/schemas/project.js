@@ -1,9 +1,22 @@
+import Students from '../../src/components/Students';
+
 /* eslint-disable import/no-anonymous-default-export */
 export default {
   name: 'project',
   title: 'Project',
   type: 'document',
   fields: [
+    {
+      title: 'Students',
+      name: 'students',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'student' }],
+        },
+      ],
+    },
     {
       name: 'title',
       type: 'string',
@@ -34,6 +47,11 @@ export default {
       type: 'text',
     },
     {
+      name: 'body',
+      title: 'Body',
+      type: 'blockContent',
+    },
+    {
       name: 'projectType',
       title: 'Project type',
       type: 'string',
@@ -61,4 +79,17 @@ export default {
       },
     },
   ],
+  // preview: {
+  //   select: {
+  //     title: 'title',
+  //     author: 'student.name',
+  //     media: 'mainImage',
+  //   },
+  //   prepare(selection) {
+  //     const { student } = selection;
+  //     return Object.assign({}, selection, {
+  //       subtitle: student && `by ${student}`,
+  //     });
+  //   },
+  // },
 };
