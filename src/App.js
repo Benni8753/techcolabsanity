@@ -18,8 +18,8 @@ export default function App() {
         <Route component={About} path='/about' />
         <Route component={Project} path='/project/:slug' />
         <Route component={Projects} path='project' />
-        <Route component={Students} path='/student/:slug' />
-        <Route component={Student} path='/student' />
+        <Route component={Students} path='student' />
+        <Route component={Student} path='/student/:slug' />
         <Route component={Contact} path='/contact' />
         {/* <Route  path='https://www.ara.ac.nz/' /> */}
       </Switch>

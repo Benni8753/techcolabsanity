@@ -5,6 +5,17 @@ export default {
   type: 'document',
   fields: [
     {
+      title: 'Projects',
+      name: 'projects',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'project' }],
+        },
+      ],
+    },
+    {
       name: 'name',
       type: 'string',
     },
@@ -26,31 +37,41 @@ export default {
       },
     },
     {
-      name: 'project',
-      title: 'Project',
-      type: 'reference',
-      weak: true,
-      to: [{ type: 'project' }],
-      description: 'Which project the student was involved in',
+      name: 'story',
+      type: 'text',
     },
-    // {
-    //   name: 'projects',
-    //   title: 'Projects the student was involved',
-    //   type: 'array',
-    //   of: [
-    //     {
-    //       type: 'reference',
-    //       to: [{ type: 'student' }],
-    //     },
-    //   ],
-    // },
     {
-      name: 'about',
+      name: 'introduction',
       type: 'text',
     },
     {
       name: 'linkedin',
       type: 'url',
+    },
+    {
+      name: 'github',
+      type: 'url',
+    },
+    {
+      name: 'resume',
+      type: 'file',
+    },
+    {
+      name: 'age',
+      type: 'text',
+    },
+    {
+      name: 'studySubject',
+      type: 'text',
+      max: 50,
+    },
+    {
+      name: 'graduation',
+      type: 'text',
+    },
+    {
+      name: 'pathway',
+      type: 'text',
     },
     {
       name: 'tags',

@@ -29,17 +29,16 @@ export default function Project() {
       body,
       description,
       tags,
-      "students": *[_type == "student" && project._ref in *[_type=="project" && title == title ]._id ]{
+      "students": *[_type=='student' && references(^._id)]{
         name,
         mainImage{
           asset->{
             id,
             url
           }
-        },
+        }
+      },
         "slug": slug.current,
-
-      }
     }`
       )
       .then((data) => setSingleProject(data[0]))
@@ -60,10 +59,10 @@ export default function Project() {
               </h1>
               <div className='flex justify-center text-gray-800'>
                 {singleProject.students &&
-                  singleProject.students.map((student, index) => (
+                  singleProject.students.map((student) => (
                     <div>
                       <img
-                        src={urlFor(student.studentImage).url()}
+                        src={urlFor(student.mainImage).url()}
                         alt={student.name}
                         className='w-10 h-10 rounded-full'
                       />

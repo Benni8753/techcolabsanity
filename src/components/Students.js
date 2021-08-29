@@ -28,27 +28,22 @@ export default function Students() {
     <main id='student' className='st-back min-h-screen p-12'>
       <section className='container mx-auto'>
         <h1 className='text-xl flex justify-center m-10'>STUDENTS</h1>
-        <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 '>
+        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-3 '>
           {studentData &&
             studentData.map((student, index) => (
               <article className='image'>
                 <Link
                   className=''
-                  to={'/project/' + student.slug.current}
+                  to={'/student/' + student.slug.current}
                   key={student.slug.current}>
                   <span
-                    className='block h-96 relative rounded shadow leading-snug  border-indigo-100 '
+                    className='block h-96 relative rounded shadow leading-snug bg-gray-300 border-indigo-100 '
                     key={index}>
                     <img
                       src={student.mainImage.asset.url}
                       alt={student.mainImage.alt}
-                      className='w-full h-full rounded-r object-cover absolute'
+                      className='w-full h-full rounded-r object-cover absolute image-add'
                     />
-                    {/* <span className='block relative h-full flex justify-end items-end pr-5 pb-4'>
-                      <h3 className='text-gray-800 text-lg font-blog px-3 py-4 bg-blue-700 text-red-100 bg-opacity-75 rounded'>
-                        {project.title}
-                      </h3>
-                    </span> */}
                   </span>
                   <div className='image-overlay z-40'>
                     <div className='italic image-title text-5xl'>

@@ -79,17 +79,17 @@ export default {
       },
     },
   ],
-  // preview: {
-  //   select: {
-  //     title: 'title',
-  //     author: 'student.name',
-  //     media: 'mainImage',
-  //   },
-  //   prepare(selection) {
-  //     const { student } = selection;
-  //     return Object.assign({}, selection, {
-  //       subtitle: student && `by ${student}`,
-  //     });
-  //   },
-  // },
+  preview: {
+    select: {
+      title: 'title',
+      author: 'student.name',
+      media: 'mainImage',
+    },
+    prepare(selection) {
+      const { student } = selection;
+      return Object.assign({}, selection, {
+        subtitle: student && `by ${student}`,
+      });
+    },
+  },
 };
