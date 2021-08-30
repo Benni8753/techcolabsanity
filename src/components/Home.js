@@ -12,10 +12,9 @@ export default function Home() {
     <div>
       <Welcome />
       <NavBar />
-      <Welcome />
       <Projects />
       <Students />
       <Contact />
     </div>
-  )
+  );
 }

@@ -42,6 +42,7 @@ export default function Student() {
       tags,
       "projects": *[_type=='project' && references(^._id)]{
         title,
+        slug,
         mainImage{
           asset->{
             id,
@@ -82,15 +83,17 @@ export default function Student() {
         </header>
 
         <main className='container mx-auto text-gray-400'>
-          <div className='grid md:grid-cols-1 lg:grid-cols-3 gap-1 mt-20'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-1 mt-20'>
             {/* LEFT SECTION */}
             <div className=' flex-col justify-between mr-6'>
               <h1 className='student-text text-3xl font-black'>Story</h1>
               <p className='leading-loose mt-10'>{singleStudent.story}</p>
-              <div className='flex-col justify-between'>
+              <div className='flex flex-wrap'>
                 {singleStudent.tags &&
                   singleStudent.tags.map((tag) => (
-                    <p className='bg-gray-100 text-gray-400 rounded'># {tag}</p>
+                    <p className='bg-gray-100 text-gray-400 rounded m-2'>
+                      # {tag}
+                    </p>
                   ))}
               </div>
             </div>
@@ -147,7 +150,7 @@ export default function Student() {
                   </a>
                 </div>
                 <div className='text-7xl mt-14'>
-                  <a href={singleStudent.linkedin}>
+                  <a href={singleStudent.github}>
                     <ion-icon name='logo-github'></ion-icon>
                   </a>
                 </div>
@@ -156,7 +159,37 @@ export default function Student() {
           </div>
         </main>
         {/* PROJECTS */}
-        <div className='container mx-auto border border-red-800'></div>
+
+        <div className='container  mx-auto'>
+          <div className='student-text text-3xl mt-20 mb-10'>
+            Projects involved
+          </div>
+
+          <div className=' flex justify-evenly my-10'>
+            {singleStudent.projects &&
+              singleStudent.projects.map((p, index) => (
+                <article className='image mx-1'>
+                  <Link
+                    className='pb-2'
+                    to={'/project/' + p.slug.current}
+                    key={p.slug.current}>
+                    <span className='rounded shadow leading-snug' key={index}>
+                      <img
+                        src={p.mainImage.asset.url}
+                        alt={p.mainImage.alt}
+                        className='w-full h-full rounded-r object-cover'
+                      />
+                    </span>
+                    <div className='image-overlay z-50'>
+                      <div className='italic image-title text-5xl'>
+                        {p.title}
+                      </div>
+                    </div>
+                  </Link>
+                </article>
+              ))}
+          </div>
+        </div>
       </section>
     </div>
   );
