@@ -33,7 +33,7 @@ export default function Projects() {
             projectData.map((project, index) => (
               <article className='image'>
                 <Link
-                  className='animate-pulse'
+                  className=''
                   to={'/project/' + project.slug.current}
                   key={project.slug.current}>
                   <span

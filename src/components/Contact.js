@@ -11,7 +11,7 @@ export default function Contact() {
 
   const confirm = () => {
     toast.success(
-      'Thank you for contacting us! Your email has been send. We are coming back to you soon!',
+      'Thank you for contacting us! Your email has been sent. We are coming back to you soon!',
       {
         position: toast.POSITION.TOP_LEFT,
         autoClose: 8000,

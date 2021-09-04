@@ -73,6 +73,11 @@ body {
   background-color: grey;
 }
 
+.test-width {
+  border: 1px solid red;
+  width: 10000px;
+}
+
 .bgph {
   top: -5px;
 }
@@ -288,4 +293,23 @@ button:enabled {
 .margin-set {
   margin-left: 50%;
   margin-right: 50%;
+}
+
+.about-bg {
+  background-color: #53f4ff;
+}
+
+@media only screen and (max-width: 1010px) {
+  .test-query {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: start;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .test-query {
+    /* border: 2px solid red; */
+    display: none;
+  }
 }

@@ -5,8 +5,10 @@ import { Link as SLink } from 'react-scroll';
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
+  const [mobileButton, setMobileButton] = useState(false);
+
   const changeBackground = () => {
-    if (window.scrollY >= 775) {
+    if (window.scrollY >= 350) {
       setNavbar(true);
     } else {
       setNavbar(false);
@@ -19,18 +21,35 @@ export default function NavBar() {
     <nav
       className={
         navbar
-          ? 'fixed right-0 left-0fixed inset-x-0 bgph  z-30 activeback section.open '
-          : 'fixed right-0 left-0fixed inset-x-0 bgph z-30 section'
+          ? 'fixed right-0 left-0 inset-x-0 bgph z-50 activeback section.open '
+          : 'fixed right-0 left-0 inset-x-0 bgph z-50 section'
       }>
       <section className='container mx-auto'>
-        <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 '>
-          <div className='flex items-center font-trueno  '>
-            <h2 className='text-4xl logo '>TECH COLAB / </h2>
-            <p className='text-xs font-thin logo-add p-4'>Powered by Ara</p>
+        <div className='sm:self-end grid md:grid-cols-1 items-center lg:grid-cols-2 gap-2'>
+          <div className='hidden md:flex items-center font-trueno mr-10'>
+            <h2 className='text-4xl logo  '>TECH COLAB / </h2>
+            <p className='text-xs font-thin logo-add p-4 mr-10'>
+              Powered by Ara
+            </p>
+            {/* MOBILE MENU */}
           </div>
-          <div className='flex justify-end'>
+          <div className='md:hidden py-8 px-3'>
+            <div className=' md:hidden flex justify-between'>
+              <div className='w-30'>
+                {' '}
+                <h4 className='text-xl logo pt-1  w-max'>TECH COLAB </h4>
+              </div>
+              <button
+                className='mobile-menu-button text-4xl'
+                onClick={() => setMobileButton(!mobileButton)}>
+                {' '}
+                <ion-icon name='menu-outline'></ion-icon>
+              </button>
+            </div>
+          </div>
+          <div className='hidden lg:flex justify-end md:flex test-query '>
             <SLink
-              className='p-5 cursor-pointer hover:underline'
+              className='py-5 px-4 cursor-pointer hover:underline'
               activeClass='active'
               to='welcome'
               spy={true}
@@ -40,7 +59,17 @@ export default function NavBar() {
               HOME
             </SLink>
             <SLink
-              className='p-5 cursor-pointer hover:underline'
+              className='py-5 px-4 cursor-pointer hover:underline'
+              activeClass='active'
+              to='about'
+              spy={true}
+              smooth={true}
+              offset={10}
+              duration={1000}>
+              ABOUT
+            </SLink>
+            <SLink
+              className='py-5 px-4 cursor-pointer hover:underline'
               activeClass='active'
               to='project'
               spy={true}
@@ -50,7 +79,7 @@ export default function NavBar() {
               PROJECTS
             </SLink>
             <SLink
-              className='p-5 cursor-pointer hover:underline'
+              className='py-5 px-4 cursor-pointer hover:underline'
               activeClass='active'
               to='student'
               spy={true}
@@ -61,7 +90,7 @@ export default function NavBar() {
             </SLink>
 
             <SLink
-              className='p-5 cursor-pointer hover:underline'
+              className='py-5 px-4 cursor-pointer hover:underline'
               activeClass='active'
               to='contact'
               spy={true}
@@ -71,7 +100,7 @@ export default function NavBar() {
               CONTACT
             </SLink>
             <SLink
-              className='p-5 cursor-pointer hover:underline'
+              className='py-5 px-4 cursor-pointer hover:underline'
               activeClass='active'
               to='navbar'
               spy={true}
@@ -87,6 +116,18 @@ export default function NavBar() {
               ARA
             </Link>
           </div>
+
+          {/* mobile menu */}
+          {mobileButton && (
+            <div className='' onClick={() => setMobileButton(!mobileButton)}>
+              <a href='#' class='block py-2 px-4 text-sm hover:bg-gray-900'>
+                Features
+              </a>
+              <a href='#' class='block py-2 px-4 text-sm hover:bg-gray-900'>
+                Pricing
+              </a>
+            </div>
+          )}
         </div>
       </section>
     </nav>

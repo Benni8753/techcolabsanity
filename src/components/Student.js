@@ -146,12 +146,12 @@ export default function Student() {
               <div className='flex justify-between'>
                 <div className='text-7xl mt-14'>
                   <a href={singleStudent.linkedin}>
-                    <ion-icon name='logo-linkedin'></ion-icon>
+                    <ion-icon name='logo-linkedin' target='_blank'></ion-icon>
                   </a>
                 </div>
                 <div className='text-7xl mt-14'>
                   <a href={singleStudent.github}>
-                    <ion-icon name='logo-github'></ion-icon>
+                    <ion-icon name='logo-github' target='_blank'></ion-icon>
                   </a>
                 </div>
               </div>

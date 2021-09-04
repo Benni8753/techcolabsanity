@@ -1,5 +1,16 @@
 import React from 'react';
 
 export default function About() {
-  return <h1>About page</h1>;
+  return (
+    <main
+      className='bg-gray-900 text-gray-100  p-2 leading-loose'
+      id='about'>
+      <div className='container mx-auto'>
+        <h3 className='text-3xl py-52 leading-relaxed'>
+          Tech colab is a team of Ara's top senior students, creating software
+          products for small and medium size enterprises across New Zealand.
+        </h3>
+      </div>
+    </main>
+  );
 }
