@@ -1,11 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Link as SLink } from 'react-scroll';
+import * as Unicons from '@iconscout/react-unicons';
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   const [mobileButton, setMobileButton] = useState(false);
+  const [mobileNav, setMobileNav] = useState(false)
 
   const changeBackground = () => {
     if (window.scrollY >= 350) {
@@ -15,12 +17,26 @@ export default function NavBar() {
     }
   };
 
+  const mobileNavBackground = () => {
+    if (window.scrollY <= 300) {
+      setMobileNav(true);
+    } else {
+      setMobileNav(false)
+    }
+  }
+
+  const eventHandler = () => {
+    setMobileButton(!mobileButton);
+    mobileNavBackground()
+  }
+
   window.addEventListener('scroll', changeBackground);
+  // window.addEventListener('scroll', mobileNavBackground)
 
   return (
     <nav
       className={
-        navbar
+        navbar || mobileNav
           ? 'fixed right-0 left-0 inset-x-0 bgph z-50 activeback section.open '
           : 'fixed right-0 left-0 inset-x-0 bgph z-50 section'
       }>
@@ -41,7 +57,7 @@ export default function NavBar() {
               </div>
               <button
                 className='mobile-menu-button text-4xl'
-                onClick={() => setMobileButton(!mobileButton)}>
+                onClick={eventHandler}>
                 {' '}
                 <ion-icon name='menu-outline'></ion-icon>
               </button>
@@ -119,13 +135,72 @@ export default function NavBar() {
 
           {/* mobile menu */}
           {mobileButton && (
-            <div className='' onClick={() => setMobileButton(!mobileButton)}>
-              <a href='#' class='block py-2 px-4 text-sm hover:bg-gray-900'>
-                Features
-              </a>
-              <a href='#' class='block py-2 px-4 text-sm hover:bg-gray-900'>
-                Pricing
-              </a>
+            <div
+              className='flex flex-col justify-center'
+              onClick={() => setMobileButton(!mobileButton)}>
+              <SLink
+                onClick={() => setMobileButton(!mobileButton)}
+                className='py-5 px-4 cursor-pointer hover:underline mx-auto'
+                activeClass='active'
+                to='welcome'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={1000}>
+                HOME
+              </SLink>
+              <SLink
+                onClick={() => setMobileButton(!mobileButton)}
+                className='py-5 px-4 cursor-pointer hover:underline  mx-auto'
+                activeClass='active'
+                to='about'
+                spy={true}
+                smooth={true}
+                offset={10}
+                duration={1000}>
+                ABOUT
+              </SLink>
+              <SLink
+                onClick={() => setMobileButton(!mobileButton)}
+                className='py-5 px-4 cursor-pointer hover:underline  mx-auto'
+                activeClass='active'
+                to='project'
+                spy={true}
+                smooth={true}
+                offset={-55}
+                duration={1000}>
+                PROJECTS
+              </SLink>
+              <SLink
+                onClick={() => setMobileButton(!mobileButton)}
+                className='py-5 px-4 cursor-pointer hover:underline  mx-auto'
+                activeClass='active'
+                to='student'
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={1000}>
+                STUDENTS
+              </SLink>
+
+              <SLink
+                onClick={() => setMobileButton(!mobileButton)}
+                className='py-5 px-4 cursor-pointer hover:underline  mx-auto'
+                activeClass='active'
+                to='contact'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={1000}>
+                CONTACT <Unicons.UilReact />
+              </SLink>
+              <Link
+                onClick={() => setMobileButton(!mobileButton)}
+                className='py-5 pl-5 hover:underline  mx-auto sm: py-5 px-5'
+                to={{ pathname: 'https://www.ara.ac.nz' }}
+                target='_blank'>
+              ARA
+              </Link>
             </div>
           )}
         </div>
