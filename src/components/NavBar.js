@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Link as SLink } from 'react-scroll';
 import * as Unicons from '@iconscout/react-unicons';
 
@@ -7,7 +7,7 @@ export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   const [mobileButton, setMobileButton] = useState(false);
-  const [mobileNav, setMobileNav] = useState(false)
+  const [mobileNav, setMobileNav] = useState(false);
 
   const changeBackground = () => {
     if (window.scrollY >= 350) {
@@ -17,21 +17,25 @@ export default function NavBar() {
     }
   };
 
+  const homeClick = () => {
+    setNavbar(false);
+    setMobileButton(false);
+    setMobileNav(false);
+  };
+
   const mobileNavBackground = () => {
     if (window.scrollY <= 300) {
-      setMobileNav(true);
-    } else {
-      setMobileNav(false)
+      setMobileNav(!mobileButton);
     }
-  }
+  };
 
   const eventHandler = () => {
+    console.log('mobile clicked');
     setMobileButton(!mobileButton);
-    mobileNavBackground()
-  }
+    mobileNavBackground();
+  };
 
   window.addEventListener('scroll', changeBackground);
-  // window.addEventListener('scroll', mobileNavBackground)
 
   return (
     <nav
@@ -80,7 +84,7 @@ export default function NavBar() {
               to='about'
               spy={true}
               smooth={true}
-              offset={10}
+              offset={-60}
               duration={1000}>
               ABOUT
             </SLink>
@@ -135,11 +139,9 @@ export default function NavBar() {
 
           {/* mobile menu */}
           {mobileButton && (
-            <div
-              className='flex flex-col justify-center'
-              onClick={() => setMobileButton(!mobileButton)}>
+            <div className='flex flex-col justify-center'>
               <SLink
-                onClick={() => setMobileButton(!mobileButton)}
+                onClick={homeClick}
                 className='py-5 px-4 cursor-pointer hover:underline mx-auto'
                 activeClass='active'
                 to='welcome'
@@ -156,7 +158,7 @@ export default function NavBar() {
                 to='about'
                 spy={true}
                 smooth={true}
-                offset={10}
+                offset={-100}
                 duration={1000}>
                 ABOUT
               </SLink>
@@ -190,7 +192,7 @@ export default function NavBar() {
                 to='contact'
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={-100}
                 duration={1000}>
                 CONTACT <Unicons.UilReact />
               </SLink>
@@ -199,7 +201,7 @@ export default function NavBar() {
                 className='py-5 pl-5 hover:underline  mx-auto sm: py-5 px-5'
                 to={{ pathname: 'https://www.ara.ac.nz' }}
                 target='_blank'>
-              ARA
+                ARA
               </Link>
             </div>
           )}

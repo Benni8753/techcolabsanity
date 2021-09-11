@@ -3,14 +3,10 @@ import React from 'react';
 import { Link as SLink } from 'react-scroll';
 export default function Welcome() {
   return (
-    <div className='min-h-full min-w-full'>
-      <div className='flex justify-between min-h-full min-w-full' id='welcome'>
-        <video autoPlay loop muted className='z-30 min-w-full min-h-full'>
-          <source
-            className='z-30 max-w-max min-h-max'
-            src={sample}
-            type='video/mp4'
-          />
+    <div className='min-h-screen object-cover'>
+      <div className='flex justify-between min-h-screen object-cover' id='welcome'>
+        <video autoPlay loop muted className='z-30 object-cover'>
+          <source className='z-30 min-h-screen object-cover' src={sample} type='video/mp4' />
         </video>
       </div>
       {/* BUTTON ARROW*/}

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import sanityClient from '../client';
 import Scroll from 'react-scroll';
 import imageUrlBuilder from '@sanity/image-url';
-import BlockContent from '@sanity/block-content-to-react';
-import NavBar from './NavBar';
-const ScrollLink = Scroll.Link;
+
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {

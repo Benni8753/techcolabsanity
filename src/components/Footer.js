@@ -5,25 +5,24 @@ export default function Footer() {
   return (
     <main className='bg-gray-900'>
       <div className='container mx-auto border-t border-white'>
-        {/* <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 '>
-          <div>Left section</div>
-          <div>Right section</div>
-        </div> */}
-        <div className='flex items-baseline justify-between py-10'>
+        <div className='flex flex-col py-4 sm:flex sm:flex-row sm:items-baseline sm:justify-between sm:py-10  '>
           <div className='font-trueno  '>
             <h2 className='text-2xl logo '>TECH COLAB</h2>
           </div>
           <div>
-            <ul className='flex justify-between font-thin'>
-              <li className='pr-10'>
+            <ul className='flex flex-col justify-center sm:p-4 sm:flex sm:justify-between sm:flex-row sm:font-thin'>
+              <li className='my-4 sm:m-0 sm:pr-5'>
                 <a href='#'>Privacy Policy</a>
               </li>
-              <li className='pr-10'>
+              <li className='my-4 sm:m-0 sm:pr-6'>
                 <a href='#'>Legal Terms</a>
               </li>
-              <li className=''>
+              <li className='my-4 sm:m-0 sm:pr-6'>
+                <a href='#'>FAQs</a>
+              </li>
+              <li className='my-4 sm:m-0'>
                 <SLink
-                  className='p-5 cursor-pointer hover:underline'
+                  className=' cursor-pointer hover:underline'
                   activeClass='active'
                   to='welcome'
                   spy={true}
@@ -31,9 +30,6 @@ export default function Footer() {
                   offset={-70}
                   duration={1000}>
                   Back to top{' '}
-                  <ion-icon
-                    id='ion-icon-arrow'
-                    name='arrow-up-circle-outline'></ion-icon>
                 </SLink>
               </li>
             </ul>

@@ -46,7 +46,9 @@ export default function Contact() {
   }
 
   return (
-    <div id='contact' className='bg-gray-900 p-12'>
+    <div
+      id='contact'
+      className='bg-gray-900 px-0 py-4 lg:p-12'>
       <section className='container mx-auto'>
         <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 '>
           <div className='flex flex-col space-y-8 justify-between '>
@@ -90,7 +92,7 @@ export default function Contact() {
             </div>
           </div>
           <div>
-            <div className=' bg-white rounded-xl shadow-lg p-8 text-gray-600'>
+            <div className=' bg-white rounded-xl shadow-lg p-4 text-gray-600 sm:p-8'>
               <form
                 onSubmit={sendEmail}
                 action=''
@@ -136,8 +138,8 @@ export default function Contact() {
                   disabled={disable}
                   className={
                     !disable
-                      ? 'transform hover:scale-110 motion-reduce:transform-none inline-block self-end st-back text-white font-bold rounded-lg px-6 py-2 uppercase text-sm'
-                      : 'transform hover:scale-110 motion-reduce:transform-none inline-block self-end st-back text-white font-bold rounded-lg px-6 py-2 uppercase text-sm border disable'
+                      ? 'transform hover:scale-110 motion-reduce:transform-none inline-block self-center st-back text-white font-bold rounded-lg px-6 py-2 uppercase text-sm sm:self-end'
+                      : 'transform hover:scale-110 motion-reduce:transform-none inline-block self-center st-back text-white font-bold rounded-lg px-6 py-2 uppercase text-sm border disable sm:self-end'
                   }>
                   Send message
                 </button>
