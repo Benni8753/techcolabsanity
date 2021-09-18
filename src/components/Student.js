@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import sanityClient from '../client';
-import Scroll from 'react-scroll';
-import imageUrlBuilder from '@sanity/image-url';
-
-
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source) {
-  return builder.image(source);
-}
 
 export default function Student() {
   const [singleStudent, setSingleStudent] = useState(null);
@@ -62,7 +54,7 @@ export default function Student() {
     <div className='min-h-screen '>
       <section className=''>
         <header className='text-center container-xl bg-gray-300 back-image'>
-          <h1 className='text-7xl flex justify-center '>
+          <h1 className='text-3xl pt-10 flex flex-col sm:text-7xl sm:justify-center lg:flex-row'>
             HI! I'M{' '}
             <h1 className='ml-2 uppercase student-text'>
               {singleStudent.name}
@@ -81,7 +73,7 @@ export default function Student() {
         </header>
 
         <main className='container mx-auto text-gray-400'>
-          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-1 mt-20'>
+          <div className='grid md:grid-cols-1 lg:grid-cols-3 gap-1 mt-20'>
             {/* LEFT SECTION */}
             <div className=' flex-col justify-between mr-6'>
               <h1 className='student-text text-3xl font-black'>Story</h1>
@@ -97,7 +89,7 @@ export default function Student() {
             </div>
 
             {/* MIDDLE SECTION */}
-            <div className='mx-auto  shadow-xl'>
+            <div className='mx-auto mb-10'>
               <img
                 src={singleStudent.mainImage.asset.url}
                 className='shadow-xl px-2'
@@ -163,10 +155,10 @@ export default function Student() {
             Projects involved
           </div>
 
-          <div className=' flex justify-evenly my-10'>
+          <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 mb-10'>
             {singleStudent.projects &&
               singleStudent.projects.map((p, index) => (
-                <article className='image mx-1'>
+                <article className='image mx-1 h-max max-h-40 sm:max-h-72 md:max-h-80 lg:max-h-full'>
                   <Link
                     className='pb-2'
                     to={'/project/' + p.slug.current}

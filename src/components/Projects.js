@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import sanityClient from '../client.js';
 
 export default function Projects() {
   const [projectData, setProject] = useState(null);
+
+
 
   useEffect(() => {
     sanityClient
@@ -25,7 +27,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <main id='project' className='pj-back min-h-screen p-12'>
+    <main id='project' className='pj-back min-h-screen p-1 sm:p-12'>
       <section className='container mx-auto'>
         <h1 className='text-xl flex justify-center m-10'>PROJECTS</h1>
         <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 '>

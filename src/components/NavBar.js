@@ -57,7 +57,7 @@ export default function NavBar() {
             <div className=' md:hidden flex justify-between'>
               <div className='w-30'>
                 {' '}
-                <h4 className='text-xl logo pt-1  w-max'>TECH COLAB </h4>
+                <h4 className='text-2xl logo pt-1  w-max'>TECH COLAB </h4>
               </div>
               <button
                 className='mobile-menu-button text-4xl'
@@ -194,7 +194,7 @@ export default function NavBar() {
                 smooth={true}
                 offset={-100}
                 duration={1000}>
-                CONTACT <Unicons.UilReact />
+                CONTACT 
               </SLink>
               <Link
                 onClick={() => setMobileButton(!mobileButton)}
