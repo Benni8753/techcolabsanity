@@ -1,89 +1,118 @@
-import Students from '../../src/components/Students';
+import Students from "../../src/components/Students";
 
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  name: 'project',
-  title: 'Project',
-  type: 'document',
+  name: "project",
+  title: "Project",
+  type: "document",
   fields: [
     {
-      title: 'Students',
-      name: 'students',
-      type: 'array',
+      title: "Students",
+      name: "students",
+      type: "array",
       of: [
         {
-          type: 'reference',
-          to: [{ type: 'student' }],
+          type: "reference",
+          to: [{ type: "student" }],
         },
       ],
     },
     {
-      name: 'title',
-      type: 'string',
+      name: "title",
+      type: "string",
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
+      name: "sub_title",
+      type: "text",
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
       options: {
-        source: 'title',
+        source: "title",
         maxLength: 96,
       },
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
+      name: "mainImage",
+      title: "Main image",
+      type: "image",
       options: {
         hotspot: true,
       },
     },
     {
-      name: 'place',
-      type: 'string',
+      name: "place",
+      type: "string",
     },
     {
-      name: 'description',
-      type: 'text',
+      name: "description_one",
+      type: "text",
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      name: "description_two",
+      type: "text",
+    },
+
+    {
+      name: "body",
+      title: "Body",
+      type: "blockContent",
     },
     {
-      name: 'projectType',
-      title: 'Project type',
-      type: 'string',
+      name: "image_one",
+      title: "image one",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: "image_two",
+      type: "image",
+    },
+    {
+      name: "image_three",
+      type: "image",
+    },
+    {
+      name: "image_four",
+      type: "image",
+    },
+    {
+      name: "projectType",
+      title: "Project type",
+      type: "string",
       options: {
         list: [
-          { value: 'Capstone project', title: 'Capstone Project' },
-          { value: 'Tech Colab Project', title: 'Tech Colab Project' },
+          { value: "Capstone project", title: "Capstone Project" },
+          { value: "Tech Colab Project", title: "Tech Colab Project" },
         ],
       },
     },
     {
-      name: 'link',
-      type: 'url',
+      name: "link",
+      type: "url",
     },
     {
-      name: 'tags',
-      type: 'array',
+      name: "tags",
+      type: "array",
       of: [
         {
-          type: 'string',
+          type: "string",
         },
       ],
       options: {
-        layout: 'tags',
+        layout: "tags",
       },
     },
   ],
   preview: {
     select: {
-      title: 'title',
-      author: 'student.name',
-      media: 'mainImage',
+      title: "title",
+      author: "student.name",
+      media: "mainImage",
     },
     prepare(selection) {
       const { student } = selection;

@@ -20,6 +20,7 @@ export default function Project() {
       .fetch(
         `*[slug.current == "${slug}"] {
       title,
+      sub_title,
       _id,
       slug,
       mainImage{
@@ -28,8 +29,33 @@ export default function Project() {
           url
         }
       },
+      image_one{
+        asset->{
+          _id,
+          url
+        }
+      },
+      image_two{
+        asset->{
+          _id,
+          url
+        }
+      },
+      image_three{
+        asset->{
+          _id,
+          url
+        }
+      },
+      image_four{
+        asset->{
+          _id,
+          url
+        }
+      },
       body,
-      description,
+      description_one,
+      description_two,
       tags,
       "students": *[_type=='student' && references(^._id)]{
         name,
@@ -92,15 +118,60 @@ export default function Project() {
     //               ))}
     //           </div>
     // </main>
-    <main className="bg-gray-100">
+    <main className="bg-gray-300">
       <ProjectNavBar />
-      <div className="min-h-screen mx-auto">
+      <header className="relative">
+        <div className="absolute h-full w-full flex items-center justify-center p-8">
+          <div className="bg-black bg-opacity-50 rounded p-12">
+            <h1 className="lg:text-3xl lg:text-6xl mb-4">
+              {singleProject.title}
+            </h1>
+            <p>{singleProject.sub_title}</p>
+          </div>
+        </div>
         <img
           src={singleProject.mainImage.asset.url}
           alt={singleProject.title}
-          className="w-full object-cover "
+          className="w-full object-cover rounded-t"
           style={{ height: "400px" }}
         />
+      </header>
+      <div></div>
+      <div id="contact" className="bg-gray-500 px-0 py-4 lg:p-12">
+        <section className="container mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10 ">
+            <div className="flex flex-col space-y-8 justify-between ">
+              <img
+                src={singleProject.image_one.asset.url}
+                alt={singleProject.title}
+                className="w-full object-cover rounded-t"
+                style={{ height: "350px" }}
+              />
+              <img
+                src={singleProject.image_two.asset.url}
+                alt={singleProject.title}
+                className="w-full object-cover rounded-t"
+                style={{ height: "350px" }}
+              />
+              <img
+                src={singleProject.image_three.asset.url}
+                alt={singleProject.title}
+                className="w-full object-cover rounded-t"
+                style={{ height: "350px" }}
+              />
+              <img
+                src={singleProject.image_four.asset.url}
+                alt={singleProject.title}
+                className="w-full object-cover rounded-t"
+                style={{ height: "350px" }}
+              />
+            </div>
+            <div>
+              <p className="mb-5">{singleProject.description_one}</p>
+              <p>{singleProject.description_two}</p>
+            </div>
+          </div>
+        </section>
       </div>
       <Contact />
     </main>
