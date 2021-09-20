@@ -120,7 +120,7 @@ export default function Project() {
     // </main>
     <main className="bg-gray-300">
       <ProjectNavBar />
-      <header className="relative">
+      {/* <header className="relative">
         <div className="absolute h-full w-full flex items-center justify-center p-8">
           <div className="bg-black bg-opacity-50 rounded p-12">
             <h1 className="lg:text-3xl lg:text-6xl mb-4">
@@ -135,7 +135,20 @@ export default function Project() {
           className="w-full object-cover rounded-t"
           style={{ height: "400px" }}
         />
-      </header>
+      </header> */}
+      <div
+        className="w-full h-full bg-no-repeat bg-cover bg-left px-0 py-4 lg:p-12"
+        style={{ backgroundImage: `url(${singleProject.mainImage.asset.url})` }}
+      >
+        <section className="container mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-2 ">
+            <div className="flex flex-col space-y-8 justify-between ">
+              left section
+            </div>
+            <div> right section</div>
+          </div>
+        </section>
+      </div>
       <div></div>
       <div id="contact" className="bg-gray-500 px-0 py-4 lg:p-12">
         <section className="container mx-auto">
