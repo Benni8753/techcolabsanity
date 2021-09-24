@@ -35,17 +35,19 @@ export default function Students() {
                 <Link
                   className=''
                   to={'/student/' + student.slug.current}
-                  key={student.slug.current}>
+                  key={student.slug.current}
+                >
                   <span
                     className='block h-96 relative rounded shadow leading-snug bg-gray-300 border-indigo-100 '
-                    key={index}>
+                    key={index}
+                  >
                     <img
                       src={student.mainImage.asset.url}
                       alt={student.mainImage.alt}
                       className='w-full h-full rounded-r object-cover absolute image-add'
                     />
                   </span>
-                  <div className='image-overlay z-40'>
+                  <div className='image-overlay z-40 p-5'>
                     <div className='italic image-title text-5xl'>
                       {student.name}
                     </div>

@@ -109,6 +109,38 @@ body {
   width: auto;
 }
 
+.proj-prof-student {
+  position: relative;
+  width: auto;
+}
+
+.proj-prof-student-overlay {
+  position: relative;
+  margin:auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 8, 76, 1) 0%,
+    rgb(199, 4, 112, 0.9) 5%,
+    rgba(1, 8, 76, 0.6) 100%
+  );
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.proj-prof-student-overlay:hover {
+  opacity: 1;
+}
+
 .image-overlay {
   position: absolute;
   top: 0;

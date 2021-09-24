@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import sanityClient from "../client";
-import imageUrlBuilder from "@sanity/image-url";
-import BlockContent from "@sanity/block-content-to-react";
-import ProjectNavBar from "./ProjectNavBar";
-import Contact from "./Contact";
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import sanityClient from '../client';
+import imageUrlBuilder from '@sanity/image-url';
+import BlockContent from '@sanity/block-content-to-react';
+import ProjectNavBar from './ProjectNavBar';
+import Contact from './Contact';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -59,9 +59,10 @@ export default function Project() {
       tags,
       "students": *[_type=='student' && references(^._id)]{
         name,
+        slug,
         mainImage{
           asset->{
-            id,
+            _id,
             url
           }
         }
@@ -71,6 +72,7 @@ export default function Project() {
       )
       .then((data) => setSingleProject(data[0]))
       .catch(console.error);
+    console.log(singleProject);
   }, [slug]);
 
   if (!singleProject) return <div>Loading....</div>;
@@ -118,7 +120,7 @@ export default function Project() {
     //               ))}
     //           </div>
     // </main>
-    <main className="bg-gray-300">
+    <main className='bg-gray-300'>
       <ProjectNavBar />
       {/* <header className="relative">
         <div className="absolute h-full w-full flex items-center justify-center p-8">
@@ -137,50 +139,89 @@ export default function Project() {
         />
       </header> */}
       <div
-        className="w-full h-full bg-no-repeat bg-cover bg-left px-0 py-4 lg:p-12"
+        className='w-full h-4/6 bg-no-repeat bg-cover bg-left px-0 py-4 lg:p-12'
         style={{ backgroundImage: `url(${singleProject.mainImage.asset.url})` }}
       >
-        <section className="container mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-2 ">
-            <div className="flex flex-col space-y-8 justify-between ">
-              left section
+        <section className='container mx-auto'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-2'>
+            <div className=''></div>
+            <div className='bg-black bg-opacity-50 rounded p-12 mt-20'>
+              <h1 className='lg:text-3xl lg:text-6xl mb-4'>
+                {singleProject.title}
+              </h1>
+              <p>{singleProject.sub_title}</p>
             </div>
-            <div> right section</div>
           </div>
         </section>
       </div>
-      <div></div>
-      <div id="contact" className="bg-gray-500 px-0 py-4 lg:p-12">
-        <section className="container mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10 ">
-            <div className="flex flex-col space-y-8 justify-between ">
+      <div className='w-full h-4/6 bg-no-repeat bg-cover bg-left px-0 py-4 lg:p-12'>
+        <section className='container m-auto'>
+          <div className='flex justify-center text-3xl'>
+            <h1>Students involved</h1>
+          </div>
+          <div className='container m-auto'>
+            <div className='flex justify-center'>
+              {singleProject.students &&
+                singleProject.students.map((student, index) => (
+                  <article className='proj-prof-student w-max h-max p-12'>
+                    <Link
+                      className=''
+                      to={'/student/' + student.slug.current}
+                      key={student.slug.current}
+                    >
+                      <span
+                        className='block h-52  relative  rounded shadow leading-snug bg-gray-300 border-indigo-100 '
+                        key={index}
+                      >
+                        <img
+                          src={student.mainImage.asset.url}
+                          alt={student.mainImage.alt}
+                          className='w-full h-full rounded-r object-cover absolute image-add'
+                        />
+                      </span>
+                      <div className='proj-prof-student-overlay z-40'>
+                        <div className='italic image-title text-5xl'>
+                          {student.name}
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                ))}
+            </div>
+          </div>
+        </section>
+      </div>
+      <div id='contact' className='bg-gray-500 px-0 py-4 lg:p-12'>
+        <section className='container mx-auto'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-10 '>
+            <div className='flex flex-col space-y-8 justify-between '>
               <img
                 src={singleProject.image_one.asset.url}
                 alt={singleProject.title}
-                className="w-full object-cover rounded-t"
-                style={{ height: "350px" }}
+                className='w-full object-cover rounded-t'
+                style={{ height: '350px' }}
               />
               <img
                 src={singleProject.image_two.asset.url}
                 alt={singleProject.title}
-                className="w-full object-cover rounded-t"
-                style={{ height: "350px" }}
+                className='w-full object-cover rounded-t'
+                style={{ height: '350px' }}
               />
               <img
                 src={singleProject.image_three.asset.url}
                 alt={singleProject.title}
-                className="w-full object-cover rounded-t"
-                style={{ height: "350px" }}
+                className='w-full object-cover rounded-t'
+                style={{ height: '350px' }}
               />
               <img
                 src={singleProject.image_four.asset.url}
                 alt={singleProject.title}
-                className="w-full object-cover rounded-t"
-                style={{ height: "350px" }}
+                className='w-full object-cover rounded-t'
+                style={{ height: '350px' }}
               />
             </div>
             <div>
-              <p className="mb-5">{singleProject.description_one}</p>
+              <p className='mb-5'>{singleProject.description_one}</p>
               <p>{singleProject.description_two}</p>
             </div>
           </div>
