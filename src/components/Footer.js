@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link as SLink } from 'react-scroll';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -11,24 +12,58 @@ export default function Footer() {
           </div>
           <div>
             <ul className='flex flex-col justify-center sm:p-4 sm:flex sm:justify-between sm:flex-row sm:font-thin'>
-              <li className='my-4 sm:m-0 sm:pr-5'>
-                <a href='#'>Privacy Policy</a>
-              </li>
               <li className='my-4 sm:m-0 sm:pr-6'>
-                <a href='#'>Legal Terms</a>
+                <Link
+                  className=''
+                  className='py-5 px-4 cursor-pointer hover:underline mx-auto'
+                  activeClass='active'
+                  to='under-construction'
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                >
+                  Privacy Policy
+                </Link>
               </li>
-              <li className='my-4 sm:m-0 sm:pr-6'>
-                <a href='#'>FAQs</a>
+              <li>
+                <Link
+                  className=''
+                  className='py-5 px-4 cursor-pointer hover:underline mx-auto'
+                  activeClass='active'
+                  to='under-construction'
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                >
+                  Legal Terms
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className=''
+                  className='py-5 px-4 cursor-pointer hover:underline mx-auto'
+                  activeClass='active'
+                  to='under-construction'
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={1000}
+                >
+                  FAQs
+                </Link>
               </li>
               <li className='my-4 sm:m-0'>
                 <SLink
-                  className=' cursor-pointer hover:underline'
+                  className='py-5 px-4 cursor-pointer hover:underline mx-auto'
                   activeClass='active'
                   to='welcome'
                   spy={true}
                   smooth={true}
                   offset={-70}
-                  duration={1000}>
+                  duration={1000}
+                >
                   Back to top{' '}
                 </SLink>
               </li>

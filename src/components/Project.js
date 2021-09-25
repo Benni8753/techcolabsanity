@@ -82,7 +82,7 @@ export default function Project() {
     <main className='bg-gray-200'>
       <ProjectNavBar />
       <div
-        className='w-full h-4/6 bg-no-repeat bg-cover bg-left px-0 py-4 lg:p-12'
+        className='w-full min-h-screen bg-no-repeat bg-cover bg-left px-0 py-4 lg:p-12'
         style={{ backgroundImage: `url(${singleProject.mainImage.asset.url})` }}
       >
         <section className='container mx-auto'>
