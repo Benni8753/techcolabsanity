@@ -2,22 +2,18 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 toast.configure();
 
 export default function Contact() {
-  const [subClick, SetSubClick] = useState(false);
   const [disable, setDisable] = useState(false);
 
   const confirm = () => {
-    toast.success(
-      'Thank you for contacting us! Your email has been sent. We are coming back to you soon!',
-      {
-        position: toast.POSITION.TOP_LEFT,
-        autoClose: 8000,
-      },
-      SetSubClick(true)
-    );
+    toast.success('Your email has been send. We are coming back to you soon.', {
+      position: toast.POSITION.TOP_LEFT,
+      autoClose: 8000,
+    });
   };
 
   function sendEmail(e) {
@@ -46,9 +42,7 @@ export default function Contact() {
   }
 
   return (
-    <div
-      id='contact'
-      className='bg-gray-900 px-0 py-4 lg:p-12'>
+    <div id='contact' className='bg-gray-900 px-0 py-4 lg:p-12'>
       <section className='container mx-auto'>
         <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 '>
           <div className='flex flex-col space-y-8 justify-between '>
@@ -77,18 +71,42 @@ export default function Contact() {
               </div>
             </div>
             <div className='flex space-x-4 text-lg'>
-              <a href='#'>
+              <Link
+                to='under-construction'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={1000}
+              >
                 <ion-icon name='logo-facebook'></ion-icon>
-              </a>
-              <a href='#'>
+              </Link>
+              <Link
+                to='under-construction'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={1000}
+              >
                 <ion-icon name='logo-linkedin'></ion-icon>
-              </a>
-              <a href='#'>
+              </Link>
+              <Link
+                to='under-construction'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={1000}
+              >
                 <ion-icon name='logo-twitter'></ion-icon>
-              </a>
-              <a href='#'>
+              </Link>
+              <Link
+                to='under-construction'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={1000}
+              >
                 <ion-icon name='logo-instagram'></ion-icon>
-              </a>
+              </Link>
             </div>
           </div>
           <div>
@@ -96,7 +114,8 @@ export default function Contact() {
               <form
                 onSubmit={sendEmail}
                 action=''
-                className='flex flex-col space-y-4'>
+                className='flex flex-col space-y-4'
+              >
                 <div>
                   <label for='' className='text-sm'>
                     Your name
@@ -107,7 +126,8 @@ export default function Contact() {
                     name='name'
                     type='text'
                     placeholder='Your name'
-                    class='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-gray-900'></input>
+                    class='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-gray-900'
+                  ></input>
                 </div>
                 <div>
                   <label for='' className='text-sm'>
@@ -119,7 +139,8 @@ export default function Contact() {
                     name='email'
                     type='email'
                     placeholder='Email address'
-                    class='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-gray-900'></input>
+                    class='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-gray-900'
+                  ></input>
                 </div>
                 <div>
                   <label for='' className='text-sm'>
@@ -132,7 +153,8 @@ export default function Contact() {
                     type='text'
                     placeholder='Message'
                     rows='4'
-                    class='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-gray-900'></textarea>
+                    class='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-gray-900'
+                  ></textarea>
                 </div>
                 <button
                   disabled={disable}
@@ -140,7 +162,8 @@ export default function Contact() {
                     !disable
                       ? 'transform hover:scale-110 motion-reduce:transform-none inline-block self-center st-back text-white font-bold rounded-lg px-6 py-2 uppercase text-sm sm:self-end'
                       : 'transform hover:scale-110 motion-reduce:transform-none inline-block self-center st-back text-white font-bold rounded-lg px-6 py-2 uppercase text-sm border disable sm:self-end'
-                  }>
+                  }
+                >
                   Send message
                 </button>
               </form>

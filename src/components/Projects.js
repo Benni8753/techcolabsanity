@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import sanityClient from '../client.js';
 
 export default function Projects() {
   const [projectData, setProject] = useState(null);
-
-
 
   useEffect(() => {
     sanityClient
@@ -37,10 +35,12 @@ export default function Projects() {
                 <Link
                   className=''
                   to={'/project/' + project.slug.current}
-                  key={project.slug.current}>
+                  key={project.slug.current}
+                >
                   <span
                     className='block h-96 relative rounded shadow leading-snug'
-                    key={index}>
+                    key={index}
+                  >
                     <img
                       src={project.mainImage.asset.url}
                       alt={project.mainImage.alt}

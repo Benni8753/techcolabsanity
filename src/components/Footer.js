@@ -14,7 +14,6 @@ export default function Footer() {
             <ul className='flex flex-col justify-center sm:p-4 sm:flex sm:justify-between sm:flex-row sm:font-thin'>
               <li className='my-4 sm:m-0 sm:pr-6'>
                 <Link
-                  className=''
                   className='py-5 px-4 cursor-pointer hover:underline mx-auto'
                   activeClass='active'
                   to='under-construction'
@@ -28,7 +27,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className=''
                   className='py-5 px-4 cursor-pointer hover:underline mx-auto'
                   activeClass='active'
                   to='under-construction'
@@ -42,7 +40,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className=''
                   className='py-5 px-4 cursor-pointer hover:underline mx-auto'
                   activeClass='active'
                   to='under-construction'

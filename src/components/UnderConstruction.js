@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from './NavBar';
-import ProjectNavBar from './ProjectNavBar';
 import { Link } from 'react-router-dom';
 
 export default function UnderConstruction() {

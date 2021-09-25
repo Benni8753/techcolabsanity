@@ -6,7 +6,6 @@ import Welcome from './Welcome';
 import NavBar from './NavBar';
 import About from './About';
 import Footer from './Footer';
-import UnderConstruction from './UnderConstruction';
 
 export default function Home() {
   return (

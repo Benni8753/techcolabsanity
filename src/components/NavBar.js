@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as SLink } from 'react-scroll';
-import * as Unicons from '@iconscout/react-unicons';
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
@@ -43,7 +42,8 @@ export default function NavBar() {
         navbar || mobileNav
           ? 'fixed right-0 left-0 inset-x-0 bgph z-50 activeback section.open '
           : 'fixed right-0 left-0 inset-x-0 bgph z-50 section'
-      }>
+      }
+    >
       <section className='container mx-auto'>
         <div className='sm:self-end grid md:grid-cols-1 items-center lg:grid-cols-2 gap-2'>
           <div className='hidden md:flex items-center font-trueno mr-10'>
@@ -61,7 +61,8 @@ export default function NavBar() {
               </div>
               <button
                 className='mobile-menu-button text-4xl'
-                onClick={eventHandler}>
+                onClick={eventHandler}
+              >
                 {' '}
                 <ion-icon name='menu-outline'></ion-icon>
               </button>
@@ -75,7 +76,8 @@ export default function NavBar() {
               spy={true}
               smooth={true}
               offset={-70}
-              duration={1000}>
+              duration={1000}
+            >
               HOME
             </SLink>
             <SLink
@@ -85,7 +87,8 @@ export default function NavBar() {
               spy={true}
               smooth={true}
               offset={-60}
-              duration={1000}>
+              duration={1000}
+            >
               ABOUT
             </SLink>
             <SLink
@@ -95,7 +98,8 @@ export default function NavBar() {
               spy={true}
               smooth={true}
               offset={-55}
-              duration={1000}>
+              duration={1000}
+            >
               PROJECTS
             </SLink>
             <SLink
@@ -105,7 +109,8 @@ export default function NavBar() {
               spy={true}
               smooth={true}
               offset={-100}
-              duration={1000}>
+              duration={1000}
+            >
               STUDENTS
             </SLink>
 
@@ -116,7 +121,8 @@ export default function NavBar() {
               spy={true}
               smooth={true}
               offset={-70}
-              duration={1000}>
+              duration={1000}
+            >
               CONTACT
             </SLink>
             <SLink
@@ -126,13 +132,15 @@ export default function NavBar() {
               spy={true}
               smooth={true}
               offset={-70}
-              duration={1000}>
+              duration={1000}
+            >
               |
             </SLink>
             <Link
               className='py-5 pl-5 hover:underline'
               to={{ pathname: 'https://www.ara.ac.nz' }}
-              target='_blank'>
+              target='_blank'
+            >
               ARA
             </Link>
           </div>
@@ -148,7 +156,8 @@ export default function NavBar() {
                 spy={true}
                 smooth={true}
                 offset={-70}
-                duration={1000}>
+                duration={1000}
+              >
                 HOME
               </SLink>
               <SLink
@@ -159,7 +168,8 @@ export default function NavBar() {
                 spy={true}
                 smooth={true}
                 offset={-100}
-                duration={1000}>
+                duration={1000}
+              >
                 ABOUT
               </SLink>
               <SLink
@@ -170,7 +180,8 @@ export default function NavBar() {
                 spy={true}
                 smooth={true}
                 offset={-55}
-                duration={1000}>
+                duration={1000}
+              >
                 PROJECTS
               </SLink>
               <SLink
@@ -181,7 +192,8 @@ export default function NavBar() {
                 spy={true}
                 smooth={true}
                 offset={-100}
-                duration={1000}>
+                duration={1000}
+              >
                 STUDENTS
               </SLink>
 
@@ -193,14 +205,16 @@ export default function NavBar() {
                 spy={true}
                 smooth={true}
                 offset={-100}
-                duration={1000}>
-                CONTACT 
+                duration={1000}
+              >
+                CONTACT
               </SLink>
               <Link
                 onClick={() => setMobileButton(!mobileButton)}
                 className='py-5 pl-5 hover:underline  mx-auto sm: py-5 px-5'
                 to={{ pathname: 'https://www.ara.ac.nz' }}
-                target='_blank'>
+                target='_blank'
+              >
                 ARA
               </Link>
             </div>

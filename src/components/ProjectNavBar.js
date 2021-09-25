@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as SLink } from 'react-scroll';
-import * as Unicons from '@iconscout/react-unicons';
 
 export default function ProjectNavBar() {
   const [navbar, setNavbar] = useState(false);
@@ -15,12 +14,6 @@ export default function ProjectNavBar() {
     } else {
       setNavbar(false);
     }
-  };
-
-  const homeClick = () => {
-    setNavbar(false);
-    setMobileButton(false);
-    setMobileNav(false);
   };
 
   const mobileNavBackground = () => {
@@ -115,7 +108,6 @@ export default function ProjectNavBar() {
           {mobileButton && (
             <div className='flex flex-col justify-center'>
               <Link
-                className=''
                 className='py-5 px-4 cursor-pointer hover:underline mx-auto'
                 activeClass='active'
                 to='/'

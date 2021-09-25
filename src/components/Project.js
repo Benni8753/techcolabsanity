@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import sanityClient from '../client';
-import imageUrlBuilder from '@sanity/image-url';
-import BlockContent from '@sanity/block-content-to-react';
 import ProjectNavBar from './ProjectNavBar';
 import Contact from './Contact';
-
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source) {
-  return builder.image(source);
-}
 
 export default function Project() {
   const [singleProject, setSingleProject] = useState(null);
@@ -72,7 +65,6 @@ export default function Project() {
       )
       .then((data) => setSingleProject(data[0]))
       .catch(console.error);
-    console.log(singleProject);
   }, [slug]);
 
   if (!singleProject) return <div>Loading....</div>;
