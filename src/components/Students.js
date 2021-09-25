@@ -28,7 +28,7 @@ export default function Students() {
     <main id='student' className='st-back min-h-screen p-1 sm:p-12'>
       <section className='container'>
         <h1 className='text-xl flex justify-center m-10'>STUDENTS</h1>
-        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-3 '>
+        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-3  pb-10'>
           {studentData &&
             studentData.map((student, index) => (
               <article className='image'>
