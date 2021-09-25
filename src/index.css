@@ -306,3 +306,10 @@ button:enabled {
   background-size: cover; /* Resize the background image to cover the entire container */
   background-image: url('./_images/cont4.png');
 }
+
+.mobile-bg {
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-image: url('./_images/mobile-back.png');
+}
