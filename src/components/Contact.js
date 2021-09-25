@@ -10,7 +10,7 @@ export default function Contact() {
   const [disable, setDisable] = useState(false);
 
   const confirm = () => {
-    toast.success('Your email has been send. We are coming back to you soon.', {
+    toast.success('Your email has been sent. We will get back to you soon.', {
       position: toast.POSITION.TOP_LEFT,
       autoClose: 8000,
     });
