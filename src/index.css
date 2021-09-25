@@ -311,5 +311,5 @@ button:enabled {
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-  background-image: url('./_images/mobile-back.png');
+  background-image: url('https://cdn.pixabay.com/photo/2016/08/31/17/02/blue-1634110_960_720.png');
 }
