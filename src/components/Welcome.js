@@ -13,7 +13,7 @@ export default function Welcome() {
     }
   };
 
-  window.addEventListener('resize', changeBackground);
+  window.addEventListener('load', changeBackground);
 
   return (
     <div className='min-h-screen object-cover'>
