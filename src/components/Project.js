@@ -79,65 +79,8 @@ export default function Project() {
   console.log(singleProject);
 
   return (
-    // <main className='bg-gray-200 min-h-screen p-12'>
-    //   <article className='container shadow-lg mx-auto bg-gray-100 rounded-lg'>
-    //     <header className='relative'>
-    //       <div className='absolute h-full w-full flex items-center justify-center p-8'>
-    //         <div className='bg-white bg-opacity-75 rounded p-12'>
-    //           <h1 className='text-3xl lg:text-6xl mb-4'>
-    //             {singleProject.title}
-    //           </h1>
-    //         </div>
-    //       </div>
-    //       <img
-    //         src={singleProject.mainImage.asset.url}
-    //         alt={singleProject.title}
-    //         className='w-full object-cover rounded-t'
-    //         style={{ height: '400px' }}
-    //       />
-    //     </header>
-    //     <div className='px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full'>
-    //       <BlockContent
-    //         blocks={singleProject.body}
-    //         projectId='x44gmgik'
-    //         dataset='production'
-    //       />
-    //     </div>
-    //   </article>
-    //   <div className='flex justify-center text-gray-800'>
-    //             {singleProject.students &&
-    //               singleProject.students.map((student) => (
-    //                 <div>
-    //                   <img
-    //                     src={urlFor(student.mainImage).url()}
-    //                     alt={student.name}
-    //                     className='w-10 h-10 rounded-full'
-    //                   />
-    //                   <p className='flex items-center pl-2 text-2xl'>
-    //                     {student.name}
-    //                   </p>
-    //                 </div>
-    //               ))}
-    //           </div>
-    // </main>
-    <main className='bg-gray-300'>
+    <main className='bg-gray-200'>
       <ProjectNavBar />
-      {/* <header className="relative">
-        <div className="absolute h-full w-full flex items-center justify-center p-8">
-          <div className="bg-black bg-opacity-50 rounded p-12">
-            <h1 className="lg:text-3xl lg:text-6xl mb-4">
-              {singleProject.title}
-            </h1>
-            <p>{singleProject.sub_title}</p>
-          </div>
-        </div>
-        <img
-          src={singleProject.mainImage.asset.url}
-          alt={singleProject.title}
-          className="w-full object-cover rounded-t"
-          style={{ height: "400px" }}
-        />
-      </header> */}
       <div
         className='w-full h-4/6 bg-no-repeat bg-cover bg-left px-0 py-4 lg:p-12'
         style={{ backgroundImage: `url(${singleProject.mainImage.asset.url})` }}
@@ -154,29 +97,29 @@ export default function Project() {
           </div>
         </section>
       </div>
-      <div className='w-full h-4/6 bg-no-repeat bg-cover bg-left px-0 py-4 lg:p-12'>
+      <div className='w-full h-4/6 bg-no-repeat bg-cover flex justify-between bg-left px-0 py-4 lg:p-12'>
         <section className='container m-auto'>
           <div className='flex justify-center text-3xl'>
-            <h1>Students involved</h1>
+            <h1 className='mb-10 text-gray-700 font-bold'>Students involved</h1>
           </div>
           <div className='container m-auto'>
-            <div className='flex justify-center'>
+            <div className='flex flex-wrap justify-between'>
               {singleProject.students &&
                 singleProject.students.map((student, index) => (
-                  <article className='proj-prof-student w-max h-max p-12'>
+                  <article className=' w-52 h-52 m-2 mb-2 m-auto'>
                     <Link
                       className=''
                       to={'/student/' + student.slug.current}
                       key={student.slug.current}
                     >
                       <span
-                        className='block h-52  relative  rounded shadow leading-snug bg-gray-300 border-indigo-100 '
+                        className='block w-52 h-52 relative  m-auto rounded shadow leading-snug bg-gray-300 border-indigo-100 '
                         key={index}
                       >
                         <img
                           src={student.mainImage.asset.url}
                           alt={student.mainImage.alt}
-                          className='w-full h-full rounded-r object-cover absolute image-add'
+                          className='w-full h-full rounded-r object-cover absolute '
                         />
                       </span>
                       <div className='proj-prof-student-overlay z-40'>
