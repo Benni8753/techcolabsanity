@@ -66,7 +66,8 @@ export default function Student() {
           <Link className=' p-8 mt-10 rounded-t-sm align-middle' to='/'>
             <button
               className=' stud-btn-color align-middle px-10 py-4 font-black mt-10 text-xl'
-              type='button '>
+              type='button '
+            >
               HOME
             </button>
           </Link>
@@ -89,7 +90,7 @@ export default function Student() {
             </div>
 
             {/* MIDDLE SECTION */}
-            <div className='mx-auto mb-10'>
+            <div className='mx-auto mb-10 pr-4'>
               <img
                 src={singleStudent.mainImage.asset.url}
                 className='shadow-xl px-2'
@@ -97,39 +98,39 @@ export default function Student() {
               />
             </div>
             {/* RIGHT SECTION */}
-            <div className='ml-6 '>
+            <div className='ml-0 '>
               <h1 className='student-text text-3xl font-extrabold'>
                 Personal Information
               </h1>
               <div className='flex justify-between mt-8 bottom-border'>
-                <p className='py-4 text-lg'>
-                  Name: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{singleStudent.name}
+                <p className='flex-none py-4 text-lg mr-2'>Name: </p>
+                <p className='flex-initial py-4 text-lg '>
+                  {singleStudent.name}
                 </p>
               </div>
               <div className='flex justify-between bottom-border'>
-                <p className='py-4 text-lg '>
-                  Age: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                <p className='flex-none py-4 text-lg mr-2'>Age: </p>
+                <p className='flex-initial py-4 text-lg '>
                   {singleStudent.age}
                 </p>
               </div>
+              {/* --------------------------------- */}
               <div className='flex justify-between bottom-border'>
-                <p className='py-4 text-lg '>
-                  Study Subject: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  &nbsp;{singleStudent.studySubject}
+                <p className='flex-none py-4 text-lg mr-2'>Degree: </p>
+                <p className='flex-initial py-4 text-lg '>
+                  {singleStudent.studySubject}
+                </p>
+              </div>
+              {/* ------------------------- */}
+              <div className='flex justify-between bottom-border'>
+                <p className='flex-none py-4 text-lg mr-2'>Pathway: </p>
+                <p className='flex-initial py-4 ml-6 text-lg '>
+                  {singleStudent.pathway}
                 </p>
               </div>
               <div className='flex justify-between bottom-border'>
-                <p className='py-4 text-lg '>
-                  Pathway: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{singleStudent.pathway}
-                </p>
-              </div>
-              <div className='flex justify-between bottom-border'>
-                <p className='py-4 text-lg '>
-                  Graduation: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  &nbsp; &nbsp; &nbsp;
+                <p className='flex-none py-4 text-lg mr-2'>Graduation: </p>
+                <p className='flex-initial py-4 text-lg '>
                   {singleStudent.graduation}
                 </p>
               </div>
@@ -162,7 +163,8 @@ export default function Student() {
                   <Link
                     className='pb-2'
                     to={'/project/' + p.slug.current}
-                    key={p.slug.current}>
+                    key={p.slug.current}
+                  >
                     <span className='rounded shadow leading-snug' key={index}>
                       <img
                         src={p.mainImage.asset.url}
