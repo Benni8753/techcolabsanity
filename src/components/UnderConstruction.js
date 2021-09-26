@@ -21,7 +21,10 @@ export default function UnderConstruction() {
         </h3>
 
         <div className='text-lg md:text-2xl self-center'>
-          <Link className='text-lg md:text-2xl p-20 self-center' to='/'>
+          <Link
+            className='text-lg pb-2 md:text-2xl pt-20 mb-2 self-center'
+            to='/'
+          >
             <button
               className=' bg-gray-500 align-middle px-10 py-4 font-black mt-10 text-xl self-center'
               type='button '

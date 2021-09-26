@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import sanityClient from '../client';
 
 export default function Student() {
   const [singleStudent, setSingleStudent] = useState(null);
   const { slug } = useParams();
+
+  let history = useHistory();
 
   useEffect(() => {
     sanityClient
@@ -65,6 +67,15 @@ export default function Student() {
           </h3>
           <Link className=' p-8 mt-10 rounded-t-sm align-middle' to='/'>
             <button
+              onClick={() => history.goBack()}
+              className=' stud-btn-color align-middle px-10 py-4 font-black mt-10 text-xl'
+              type='button '
+            >
+              BACK
+            </button>
+          </Link>
+          <Link>
+            <button
               className=' stud-btn-color align-middle px-10 py-4 font-black mt-10 text-xl'
               type='button '
             >
@@ -114,14 +125,12 @@ export default function Student() {
                   {singleStudent.age}
                 </p>
               </div>
-              {/* --------------------------------- */}
               <div className='flex justify-between bottom-border'>
                 <p className='flex-none py-4 text-lg mr-2'>Degree: </p>
                 <p className='flex-initial py-4 text-lg '>
                   {singleStudent.studySubject}
                 </p>
               </div>
-              {/* ------------------------- */}
               <div className='flex justify-between bottom-border'>
                 <p className='flex-none py-4 text-lg mr-2'>Pathway: </p>
                 <p className='flex-initial py-4 ml-6 text-lg '>
