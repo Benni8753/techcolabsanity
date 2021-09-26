@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useHistory } from 'react-router-dom';
 import sanityClient from '../client';
 import ProjectNavBar from './ProjectNavBar';
 import Contact from './Contact';
@@ -7,6 +7,8 @@ import Contact from './Contact';
 export default function Project() {
   const [singleProject, setSingleProject] = useState(null);
   const { slug } = useParams();
+
+  let history = useHistory();
 
   useEffect(() => {
     sanityClient
@@ -72,6 +74,14 @@ export default function Project() {
 
   return (
     <main className='bg-gray-200'>
+      <button
+        onClick={() => history.goBack()}
+        className='invisible bg-gray-800 fixed h-16 w-48 border border-white-800 text-white bottom-0 right-0 m-4 font-bold md:visible'
+        type='button'
+      >
+        BACK TO PROJECTS
+      </button>
+
       <ProjectNavBar />
       <div
         className='w-full min-h-screen bg-no-repeat bg-cover bg-left px-0 py-4 lg:p-12'
@@ -163,6 +173,8 @@ export default function Project() {
         </section>
       </div>
       <Contact />
+
+      {/* STATIC BUTTON */}
     </main>
   );
 }
