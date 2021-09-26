@@ -17,7 +17,7 @@ export default function Welcome() {
 
   return (
     <div className='min-h-screen object-cover'>
-      {!mobile ? (
+      {/* {!mobile ? (
         <div>
           <div
             className='flex justify-between min-h-screen object-cover'
@@ -32,14 +32,14 @@ export default function Welcome() {
             </video>
           </div>
         </div>
-      ) : (
-        <div>
-          <div
-            className='flex justify-between min-h-screen object-cover const-bg'
-            id='welcome'
-          ></div>
-        </div>
-      )}
+      ) : ( */}
+      <div>
+        <div
+          className='flex justify-between min-h-screen object-cover const-bg'
+          id='welcome'
+        ></div>
+      </div>
+      {/* )} */}
       {/* BUTTON ARROW*/}
       <SLink
         className=' cursor-pointer hover:underline'
