@@ -28,10 +28,10 @@ export default function Projects() {
     <main id='project' className='pj-back min-h-screen p-1 sm:p-12'>
       <section className='container mx-auto'>
         <h1 className='text-xl flex justify-center m-10'>PROJECTS</h1>
-        <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 card '>
+        <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 '>
           {projectData &&
             projectData.map((project, index) => (
-              <article className='image' data-aos='fade-left'>
+              <article className='image'>
                 <Link
                   className=''
                   to={'/project/' + project.slug.current}

@@ -46,10 +46,7 @@ export default function NavBar() {
     >
       <section className='container mx-auto'>
         <div className='sm:self-end grid md:grid-cols-1 items-center lg:grid-cols-2 gap-2'>
-          <div
-            className='hidden md:flex items-center font-trueno mr-10'
-            data-aos='fade-right'
-          >
+          <div className='hidden md:flex items-center font-trueno mr-10'>
             <h2 className='text-4xl logo  '>TECH COLAB / </h2>
             <p className='text-xs font-thin logo-add p-4 mr-10'>
               Powered by Ara
@@ -63,7 +60,7 @@ export default function NavBar() {
                 <h4 className='text-2xl logo pt-1  w-max'>TECH COLAB </h4>
               </div>
               <button
-                className='mobile-menu-button text-4xl pr-10'
+                className='mobile-menu-button text-4xl'
                 onClick={eventHandler}
               >
                 {' '}
