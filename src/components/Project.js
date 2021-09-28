@@ -88,7 +88,10 @@ export default function Project() {
         style={{ backgroundImage: `url(${singleProject.mainImage.asset.url})` }}
       >
         <section className='container mx-auto'>
-          <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-2'>
+          <div
+            className='grid md:grid-cols-2 lg:grid-cols-2 gap-2'
+            data-aos='fade-left'
+          >
             <div className=''></div>
             <div className='bg-black bg-opacity-50 rounded p-12 mt-20'>
               <h1 className='lg:text-3xl lg:text-6xl mb-4'>
@@ -108,7 +111,10 @@ export default function Project() {
             <div className='flex flex-wrap justify-between'>
               {singleProject.students &&
                 singleProject.students.map((student, index) => (
-                  <article className=' w-52 h-52 m-2 mb-2 m-auto'>
+                  <article
+                    className=' w-52 h-52 m-2 mb-2 m-auto'
+                    data-aos='fade-right'
+                  >
                     <Link
                       className=''
                       to={'/student/' + student.slug.current}
@@ -124,11 +130,7 @@ export default function Project() {
                           className='w-full h-full rounded-r object-cover absolute '
                         />
                       </span>
-                      <div className='proj-prof-student-overlay z-40'>
-                        <div className='italic image-title text-5xl'>
-                          {student.name}
-                        </div>
-                      </div>
+                      <div className='z-40'></div>
                     </Link>
                   </article>
                 ))}
@@ -165,7 +167,7 @@ export default function Project() {
                 style={{ height: '350px' }}
               />
             </div>
-            <div>
+            <div data-aos='fade-left'>
               <p className='mb-5'>{singleProject.description_one}</p>
               <p>{singleProject.description_two}</p>
             </div>

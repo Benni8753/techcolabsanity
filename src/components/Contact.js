@@ -45,7 +45,10 @@ export default function Contact() {
     <div id='contact' className='bg-gray-900 px-0 py-4 lg:p-12'>
       <section className='container mx-auto'>
         <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-2 '>
-          <div className='flex flex-col space-y-8 justify-between '>
+          <div
+            className='flex flex-col space-y-8 justify-between'
+            data-aos='fade-right'
+          >
             <div>
               <h1 className='font-bold text-4xl tracking-wide'>Contact Us</h1>
               <p className='pt-2 pr-2 text-gray-100 text-sm'>
@@ -110,7 +113,10 @@ export default function Contact() {
             </div>
           </div>
           <div>
-            <div className=' bg-white rounded-xl shadow-lg p-4 text-gray-600 sm:p-8'>
+            <div
+              className=' bg-white rounded-xl shadow-lg p-4 text-gray-600 sm:p-8'
+              data-aos='fade-left'
+            >
               <form
                 onSubmit={sendEmail}
                 action=''

@@ -31,7 +31,7 @@ export default function Students() {
         <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-3  pb-10'>
           {studentData &&
             studentData.map((student, index) => (
-              <article className='image'>
+              <article className='image' data-aos='fade-right'>
                 <Link
                   className=''
                   to={'/student/' + student.slug.current}
