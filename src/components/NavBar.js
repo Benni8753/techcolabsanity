@@ -63,7 +63,7 @@ export default function NavBar() {
                 <h4 className='text-2xl logo pt-1  w-max'>TECH COLAB </h4>
               </div>
               <button
-                className='mobile-menu-button text-4xl'
+                className='mobile-menu-button text-4xl pr-10'
                 onClick={eventHandler}
               >
                 {' '}
