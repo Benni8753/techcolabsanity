@@ -1,20 +1,8 @@
 import sample from '../_images/OMGBG4.mov';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link as SLink } from 'react-scroll';
 
 export default function Welcome() {
-  // const [mobile, setMobile] = useState(false);
-
-  // const changeBackground = () => {
-  //   if (window.innerWidth < 750) {
-  //     setMobile(true);
-  //   } else {
-  //     setMobile(false);
-  //   }
-  // };
-
-  // window.addEventListener('load', changeBackground);
-
   return (
     <div className='min-h-screen object-cover '>
       {/* {!mobile ? ( */}
