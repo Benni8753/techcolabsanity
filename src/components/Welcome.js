@@ -3,43 +3,43 @@ import React, { useState } from 'react';
 import { Link as SLink } from 'react-scroll';
 
 export default function Welcome() {
-  const [mobile, setMobile] = useState(false);
+  // const [mobile, setMobile] = useState(false);
 
-  const changeBackground = () => {
-    if (window.innerWidth < 750) {
-      setMobile(true);
-    } else {
-      setMobile(false);
-    }
-  };
+  // const changeBackground = () => {
+  //   if (window.innerWidth < 750) {
+  //     setMobile(true);
+  //   } else {
+  //     setMobile(false);
+  //   }
+  // };
 
-  window.addEventListener('load', changeBackground);
+  // window.addEventListener('load', changeBackground);
 
   return (
-    <div className='min-h-screen object-cover'>
-      {!mobile ? (
-        <div>
-          <div
-            className='flex justify-between min-h-screen object-cover'
-            id='welcome'
-          >
-            <video autoPlay loop muted className='z-30 object-cover'>
-              <source
-                className='z-30 min-h-screen object-cover'
-                src={sample}
-                type='video/mp4'
-              />
-            </video>
-          </div>
+    <div className='min-h-screen object-cover '>
+      {/* {!mobile ? ( */}
+      <div className='media-desktop'>
+        <div
+          className='flex justify-between min-h-screen object-cover'
+          id='welcome'
+        >
+          <video autoPlay loop muted className='z-30 object-cover'>
+            <source
+              className='z-30 min-h-screen object-cover'
+              src={sample}
+              type='video/mp4'
+            />
+          </video>
         </div>
-      ) : (
-        <div>
-          <div
-            className='flex justify-between min-h-screen object-cover const-bg'
-            id='welcome'
-          ></div>
-        </div>
-      )}
+      </div>
+      {/* ) : ( */}
+      <div className='media-mobile'>
+        <div
+          className='flex justify-between min-h-screen object-cover const-bg media-mobile'
+          id='welcome'
+        ></div>
+      </div>
+      {/* )} */}
       {/* BUTTON ARROW*/}
       <SLink
         className=' cursor-pointer hover:underline'

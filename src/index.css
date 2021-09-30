@@ -313,3 +313,17 @@ button:enabled {
   background-size: cover; /* Resize the background image to cover the entire container */
   background-image: url('https://cdn.pixabay.com/photo/2016/08/31/17/02/blue-1634110_960_720.png');
 }
+
+@media screen and (max-width: 500px) {
+  .media-desktop {
+    display: none;
+    border: 2px solid red;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .media-mobile {
+    display: none;
+    border: 2px solid red;
+  }
+}
