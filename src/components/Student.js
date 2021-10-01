@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import sanityClient from '../client';
+import ProjectNavBar from './ProjectNavBar';
 
 export default function Student() {
   const [singleStudent, setSingleStudent] = useState(null);
@@ -54,6 +55,14 @@ export default function Student() {
 
   return (
     <div className='min-h-screen '>
+      <ProjectNavBar />
+      <button
+        onClick={() => history.goBack()}
+        className='invisible z-50 bg-gray-800 fixed h-16 w-48 border border-white-800 text-white bottom-0 right-0 m-4 font-bold md:visible'
+        type='button'
+      >
+        BACK
+      </button>
       <section className=''>
         <header className='text-center container-xl bg-gray-300 back-image'>
           <h1 className='text-3xl pt-10 flex flex-col sm:text-7xl sm:justify-center lg:flex-row'>
@@ -65,23 +74,6 @@ export default function Student() {
           <h3 className='justify-center p-10 mt-10 text-xl '>
             {singleStudent.introduction}
           </h3>
-          <Link className=' p-8 mt-10 rounded-t-sm align-middle' to='/'>
-            <button
-              onClick={() => history.goBack()}
-              className=' stud-btn-color align-middle px-10 py-4 font-black mt-10 text-xl'
-              type='button '
-            >
-              BACK
-            </button>
-          </Link>
-          <Link>
-            <button
-              className=' stud-btn-color align-middle px-10 py-4 font-black mt-10 text-xl'
-              type='button '
-            >
-              HOME
-            </button>
-          </Link>
         </header>
 
         <main className='container mx-auto text-gray-400'>
