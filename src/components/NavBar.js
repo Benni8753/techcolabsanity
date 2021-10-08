@@ -48,7 +48,6 @@ export default function NavBar() {
         <div className='sm:self-end grid md:grid-cols-1 items-center lg:grid-cols-2 gap-2'>
           <div
             className='hidden md:flex items-center font-trueno mr-10'
-            data-aos='fade-right'
           >
             <h2 className='text-4xl logo  '>TECH COLAB / </h2>
             <p className='text-xs font-thin logo-add p-4 mr-10'>
@@ -59,7 +58,6 @@ export default function NavBar() {
           <div className='md:hidden py-8 px-3'>
             <div
               className=' md:hidden flex justify-between'
-              data-aos='fade-right'
             >
               <div className='w-30'>
                 {' '}
