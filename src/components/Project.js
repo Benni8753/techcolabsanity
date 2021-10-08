@@ -113,7 +113,6 @@ export default function Project() {
                 singleProject.students.map((student, index) => (
                   <article
                     className=' w-52 h-52 m-2 mb-2 m-auto'
-                    data-aos='fade-right'
                   >
                     <Link
                       className=''
@@ -167,7 +166,7 @@ export default function Project() {
                 style={{ height: '350px' }}
               />
             </div>
-            <div data-aos='fade-left'>
+            <div>
               <p className='mb-5'>{singleProject.description_one}</p>
               <p>{singleProject.description_two}</p>
             </div>
