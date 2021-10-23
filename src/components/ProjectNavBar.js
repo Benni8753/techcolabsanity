@@ -5,10 +5,6 @@ import logo from '../_images/tc_primary_white.png'
 import mobileLogo from '../_images/tc_mobile.png'
 import { useHistory } from 'react-router-dom';
 
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-
-
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
   const history = useHistory()

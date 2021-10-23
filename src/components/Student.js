@@ -7,8 +7,6 @@ export default function Student() {
   const [singleStudent, setSingleStudent] = useState(null);
   const { slug } = useParams();
 
-  let history = useHistory();
-
   useEffect(() => {
     sanityClient
       .fetch(
@@ -56,13 +54,6 @@ export default function Student() {
   return (
     <div className='min-h-screen '>
       <ProjectNavBar />
-      {/* <button
-        onClick={() => history.goBack()}
-        className='invisible z-50 bg-gray-800 fixed h-16 w-48 border border-white-800 text-white bottom-0 right-0 m-4 font-bold md:visible'
-        type='button'
-      >
-        BACK
-      </button> */}
       <section className=''>
         <header className='text-center container-xl bg-gray-300 back-image'>
           <h1 className='text-3xl pt-48 flex flex-col sm:text-7xl sm:justify-center lg:flex-row'>

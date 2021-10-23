@@ -8,8 +8,6 @@ export default function Project() {
   const [singleProject, setSingleProject] = useState(null);
   const { slug } = useParams();
 
-  let history = useHistory();
-
   useEffect(() => {
     sanityClient
       .fetch(
@@ -68,9 +66,6 @@ export default function Project() {
       .then((data) => setSingleProject(data[0]))
       .catch(console.error);
   }, [slug]);
-
-  if (!singleProject) return <div>Loading....</div>;
-  console.log(singleProject);
 
   return (
     <main className='bg-gray-200'>
