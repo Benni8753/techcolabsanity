@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useHistory } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import sanityClient from '../client';
 import ProjectNavBar from './ProjectNavBar';
 import Contact from './Contact';
