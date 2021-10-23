@@ -56,7 +56,7 @@ export default function NavBar() {
           <div
             className='hidden lg:flex items-center font-trueno mr-10 w-28 my-4'
           >
-            <img src={logo}/>
+            <img src={logo} alt=''/>
             {/* MOBILE MENU */}
           </div>
           </Link>
@@ -66,7 +66,7 @@ export default function NavBar() {
             >
               <div className='w-28 pt-1'>
                 {' '}
-                <img src={mobileLogo} />
+                <img src={mobileLogo} alt=''/>
               </div>
               <button
                 className='mobile-menu-button text-4xl pr-4 '
