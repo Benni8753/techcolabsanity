@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useHistory } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import sanityClient from '../client';
 import ProjectNavBar from './ProjectNavBar';
 import Contact from './Contact';
@@ -7,8 +7,6 @@ import Contact from './Contact';
 export default function Project() {
   const [singleProject, setSingleProject] = useState(null);
   const { slug } = useParams();
-
-  let history = useHistory();
 
   useEffect(() => {
     sanityClient
