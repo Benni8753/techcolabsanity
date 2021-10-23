@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useHistory } from 'react-router-dom';
 import sanityClient from '../client';
 import ProjectNavBar from './ProjectNavBar';
 import Contact from './Contact';
@@ -7,6 +7,8 @@ import Contact from './Contact';
 export default function Project() {
   const [singleProject, setSingleProject] = useState(null);
   const { slug } = useParams();
+
+  let history = useHistory();
 
   useEffect(() => {
     sanityClient
@@ -66,6 +68,11 @@ export default function Project() {
       .then((data) => setSingleProject(data[0]))
       .catch(console.error);
   }, [slug]);
+
+  if (!singleProject) return <div>Loading....</div>;
+  console.log(singleProject);
+
+
 
   return (
     <main className='bg-gray-200'>
@@ -161,6 +168,8 @@ export default function Project() {
         </section>
       </div>
       <Contact />
+
+      {/* STATIC BUTTON */}
     </main>
   );
 }
