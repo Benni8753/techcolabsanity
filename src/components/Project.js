@@ -72,15 +72,17 @@ export default function Project() {
   if (!singleProject) return <div>Loading....</div>;
   console.log(singleProject);
 
+
+
   return (
     <main className='bg-gray-200'>
-      <button
+      {/* <button
         onClick={() => history.goBack()}
         className='invisible bg-gray-800 fixed h-16 w-48 border border-white-800 text-white bottom-0 right-0 m-4 font-bold md:visible'
         type='button'
       >
         BACK TO PROJECTS
-      </button>
+      </button> */}
 
       <ProjectNavBar />
       <div
@@ -93,7 +95,7 @@ export default function Project() {
             data-aos='fade-left'
           >
             <div className=''></div>
-            <div className='bg-black bg-opacity-50 rounded p-12 mt-20'>
+            <div className='bg-black bg-opacity-50 rounded p-4 mt-20'>
               <h1 className='lg:text-3xl lg:text-6xl mb-4'>
                 {singleProject.title}
               </h1>

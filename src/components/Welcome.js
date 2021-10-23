@@ -3,13 +3,14 @@ import React from 'react';
 import { Link as SLink } from 'react-scroll';
 
 export default function Welcome() {
+  let firstLoad = true;
   class TypeWriter {
-    constructor(txtElement, words, wait = 3000) {
+    constructor(txtElement, words, wait = 1000) {
       this.txtElement = txtElement;
       this.words = words;
       this.txt = '';
       this.wordIndex = 0;
-      this.wait = parseInt(wait, 10);
+      this.wait = parseInt(wait, 8);
       this.type();
       this.isDeleting = false;
     }
@@ -33,7 +34,7 @@ export default function Welcome() {
       this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
       // Initial Type Speed
-      let typeSpeed = 300;
+      let typeSpeed = 200;
 
       if (this.isDeleting) {
         typeSpeed /= 2;
@@ -58,26 +59,29 @@ export default function Welcome() {
   }
 
   // Init On DOM Load
-  document.addEventListener('DOMContentLoaded', init);
 
   // Init App
   function init() {
+    if (firstLoad) {
     const txtElement = document.querySelector('.txt-type');
     const words = JSON.parse(txtElement.getAttribute('data-words'));
     const wait = txtElement.getAttribute('data-wait');
     // Init TypeWriter
-    new TypeWriter(txtElement, words, wait);
+    new TypeWriter(txtElement, words, wait); 
+    firstLoad = false
   }
+  }
+
   return (
-    <div className='min-h-screen object-cover '>
+    <div className='min-h-screen object-cover' onMouseMove={init}>
       <div className='container mx-auto'>
         <div className='text-5xl absolute bg-transparent z-50 h-52 pt-72 '>
           <p>
-            Your Software
+            Your 
             <span
               className='txt-type'
               data-wait='3000'
-              data-words='[" Partner", " Designer", " Inventor", " Creator", " Team"]'
+              data-words='[" Software Partner", " Web Designer", " Marketing Expert", " Software Creator", " Tech Colab Team"]'
             ></span>
           </p>
         </div>

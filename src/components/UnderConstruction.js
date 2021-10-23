@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../_images/tc_primary_white.png'
+
 
 export default function UnderConstruction() {
   return (
     <main className='const-bg min-h-screen place-content-center flex flex-col justify-center'>
-      <div className='flex items-center font-trueno pb-10 mx-auto mt-20'>
-        <h2 className='text-4xl md:text-6xl logo self-center'>TECH COLAB / </h2>
-        <p className='text-xs md:text-xl font-thin logo-add p-4'>
-          Powered by Ara
-        </p>
+      <div className='flex items-center font-trueno pb-10 mx-auto mt-20 w-52'>
+      <img src={logo} />
         {/* MOBILE MENU */}
       </div>
       <div className='max-w-screen md:m-auto flex flex-col '>

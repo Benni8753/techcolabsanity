@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import sanityClient from '../client';
-import ProjectNavBar from './ProjectNavBar';
+import ProjectNavBar from '../components/ProjectNavBar';
 
 export default function Student() {
   const [singleStudent, setSingleStudent] = useState(null);
@@ -56,16 +56,16 @@ export default function Student() {
   return (
     <div className='min-h-screen '>
       <ProjectNavBar />
-      <button
+      {/* <button
         onClick={() => history.goBack()}
         className='invisible z-50 bg-gray-800 fixed h-16 w-48 border border-white-800 text-white bottom-0 right-0 m-4 font-bold md:visible'
         type='button'
       >
         BACK
-      </button>
+      </button> */}
       <section className=''>
         <header className='text-center container-xl bg-gray-300 back-image'>
-          <h1 className='text-3xl pt-10 flex flex-col sm:text-7xl sm:justify-center lg:flex-row'>
+          <h1 className='text-3xl pt-48 flex flex-col sm:text-7xl sm:justify-center lg:flex-row'>
             HI! I'M{' '}
             <h1 className='ml-2 uppercase student-text'>
               {singleStudent.name}
@@ -76,7 +76,7 @@ export default function Student() {
           </h3>
         </header>
 
-        <main className='container mx-auto text-gray-400'>
+        <main className='container mx-auto text-gray-400' data-aos='fade-right'>
           <div className='grid md:grid-cols-1 lg:grid-cols-3 gap-1 mt-20'>
             {/* LEFT SECTION */}
             <div className=' flex-col justify-between mr-6'>

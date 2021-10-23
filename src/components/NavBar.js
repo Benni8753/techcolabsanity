@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as SLink } from 'react-scroll';
+import logo from '../_images/tc_primary_white.png'
+import mobileLogo from '../_images/tc_mobile.png'
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
@@ -46,25 +48,24 @@ export default function NavBar() {
     >
       <section className='container mx-auto'>
         <div className='sm:self-end grid md:grid-cols-1 items-center lg:grid-cols-2 gap-2'>
+          <Link to='/'>
           <div
-            className='hidden md:flex items-center font-trueno mr-10'
+            className='hidden md:flex items-center font-trueno mr-10 w-28 my-4'
           >
-            <h2 className='text-4xl logo  '>TECH COLAB / </h2>
-            <p className='text-xs font-thin logo-add p-4 mr-10'>
-              Powered by Ara
-            </p>
+            <img src={logo}/>
             {/* MOBILE MENU */}
           </div>
+          </Link>
           <div className='md:hidden py-8 px-3'>
-            <div
-              className=' md:hidden flex justify-between'
+          <div
+              className=' lg:hidden flex justify-between'
             >
-              <div className='w-30'>
+              <div className='w-28 pt-1'>
                 {' '}
-                <h4 className='text-2xl logo pt-1  w-max'>TECH COLAB </h4>
+                <img src={mobileLogo} />
               </div>
               <button
-                className='mobile-menu-button text-4xl'
+                className='mobile-menu-button text-4xl pr-4 '
                 onClick={eventHandler}
               >
                 {' '}
@@ -82,7 +83,7 @@ export default function NavBar() {
               offset={-70}
               duration={1000}
             >
-              HOME
+              Home
             </SLink>
             <SLink
               className='py-5 px-4 cursor-pointer hover:underline'
@@ -93,7 +94,7 @@ export default function NavBar() {
               offset={-60}
               duration={1000}
             >
-              ABOUT
+              About
             </SLink>
             <SLink
               className='py-5 px-4 cursor-pointer hover:underline'
@@ -104,7 +105,7 @@ export default function NavBar() {
               offset={-55}
               duration={1000}
             >
-              PROJECTS
+              Projects
             </SLink>
             <SLink
               className='py-5 px-4 cursor-pointer hover:underline'
@@ -115,7 +116,7 @@ export default function NavBar() {
               offset={-100}
               duration={1000}
             >
-              STUDENTS
+              Students
             </SLink>
 
             <SLink
@@ -127,7 +128,7 @@ export default function NavBar() {
               offset={-70}
               duration={1000}
             >
-              CONTACT
+              Contact
             </SLink>
             <SLink
               className='py-5 px-4 cursor-pointer hover:underline'
@@ -145,7 +146,7 @@ export default function NavBar() {
               to={{ pathname: 'https://www.ara.ac.nz' }}
               target='_blank'
             >
-              ARA
+              Ara
             </Link>
           </div>
 
@@ -159,7 +160,7 @@ export default function NavBar() {
                 to='welcome'
                 spy={true}
                 smooth={true}
-                offset={-700}
+                offset={-7000}
                 duration={1000}
               >
                 HOME

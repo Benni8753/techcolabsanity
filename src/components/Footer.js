@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link as SLink } from 'react-scroll';
 import { Link } from 'react-router-dom';
+import logo from '../_images/tc_primary_white.png'
 
 export default function Footer() {
   return (
     <main className='bg-gray-900'>
       <div className='container mx-auto border-t border-white'>
         <div className='flex flex-col py-4 sm:flex sm:flex-row sm:items-baseline sm:justify-between sm:py-10  '>
-          <div className='font-trueno  '>
-            <h2 className='text-2xl logo '>TECH COLAB</h2>
+          <div className='font-trueno w-24 '>
+            <img src={logo} />
           </div>
           <div>
             <ul className='flex flex-col justify-center sm:p-4 sm:flex sm:justify-between sm:flex-row sm:font-thin'>
