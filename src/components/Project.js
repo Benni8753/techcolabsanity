@@ -72,18 +72,8 @@ export default function Project() {
   if (!singleProject) return <div>Loading....</div>;
   console.log(singleProject);
 
-
-
   return (
     <main className='bg-gray-200'>
-      {/* <button
-        onClick={() => history.goBack()}
-        className='invisible bg-gray-800 fixed h-16 w-48 border border-white-800 text-white bottom-0 right-0 m-4 font-bold md:visible'
-        type='button'
-      >
-        BACK TO PROJECTS
-      </button> */}
-
       <ProjectNavBar />
       <div
         className='w-full min-h-screen bg-no-repeat bg-cover bg-left px-0 py-4 lg:p-12'
@@ -176,8 +166,6 @@ export default function Project() {
         </section>
       </div>
       <Contact />
-
-      {/* STATIC BUTTON */}
     </main>
   );
 }
