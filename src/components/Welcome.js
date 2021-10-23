@@ -58,6 +58,18 @@ export default function Welcome() {
     }
   }
 
+  document.addEventListener('DOMContentLoaded', mobileStart)
+
+  document.addEventListener('scroll', init)
+
+
+  function mobileStart() {
+    if(window.screen.width < 600)
+    init()
+  }
+
+
+
   // Init On DOM Load
 
   // Init App
