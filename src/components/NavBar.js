@@ -48,14 +48,19 @@ export default function NavBar() {
     >
       <section className='container mx-auto'>
         <div className='sm:self-end grid md:grid-cols-1 items-center lg:grid-cols-2 gap-2'>
-          <Link to='/'>
+          <SLink 
+            to='welcome'
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={1000}>
           <div
             className='hidden md:flex items-center font-trueno mr-10 w-28 my-4'
           >
             <img src={logo} alt=''/>
             {/* MOBILE MENU */}
           </div>
-          </Link>
+          </SLink>
           <div className='md:hidden py-8 px-3'>
           <div
               className=' lg:hidden flex justify-between'

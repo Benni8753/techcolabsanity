@@ -3,7 +3,7 @@ import React from 'react';
 import { Link as SLink } from 'react-scroll';
 
 export default function Welcome() {
-  let firstLoad = true;
+  var executed = false
   class TypeWriter {
     constructor(txtElement, words, wait = 1000) {
       this.txtElement = txtElement;
@@ -60,27 +60,33 @@ export default function Welcome() {
 
   document.addEventListener('DOMContentLoaded', mobileStart)
 
-  document.addEventListener('scroll', init)
+  document.addEventListener('scroll', normalStart)
 
-
-  function mobileStart() {
-    if(window.screen.width < 600)
-    init()
+  function normalStart() {
+    if(executed) {
+      init()
+    }
   }
 
-
+  function mobileStart() {
+    if(!executed) {
+      if(window.screen.width < 600)
+        init()
+    }
+  }
 
   // Init On DOM Load
 
   // Init App
   function init() {
-    if (firstLoad) {
+    if (!executed) {
+    executed = true
     const txtElement = document.querySelector('.txt-type');
     const words = JSON.parse(txtElement.getAttribute('data-words'));
     const wait = txtElement.getAttribute('data-wait');
     // Init TypeWriter
     new TypeWriter(txtElement, words, wait); 
-    firstLoad = false
+    executed = true
   }
   }
 
