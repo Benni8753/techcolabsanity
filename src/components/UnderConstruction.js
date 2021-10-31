@@ -7,7 +7,7 @@ export default function UnderConstruction() {
   return (
     <main className='const-bg min-h-screen place-content-center flex flex-col justify-center'>
       <div className='flex items-center font-trueno pb-10 mx-auto mt-20 w-52'>
-      <img src={logo} alt=''/>    this.firstLoad = truef
+      <img src={logo} alt=''/>    
         {/* MOBILE MENU */}
       </div>
       <div className='max-w-screen md:m-auto flex flex-col '>
