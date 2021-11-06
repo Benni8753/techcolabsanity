@@ -133,30 +133,38 @@ export default function Project() {
         <section className='container mx-auto'>
           <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-10 '>
             <div className='flex flex-col space-y-8 justify-between '>
+            {(singleProject.image_one ? (
               <img
                 src={singleProject.image_one.asset.url}
                 alt={singleProject.title}
                 className='w-full object-cover rounded-t'
                 style={{ height: '350px' }}
-              />
+                />) : (<div></div>)
+                )}
+              {(singleProject.image_two ? (
               <img
                 src={singleProject.image_two.asset.url}
                 alt={singleProject.title}
                 className='w-full object-cover rounded-t'
                 style={{ height: '350px' }}
-              />
+                />) : (<div></div>)
+                )}
+              {(singleProject.image_three ? (
               <img
                 src={singleProject.image_three.asset.url}
                 alt={singleProject.title}
                 className='w-full object-cover rounded-t'
                 style={{ height: '350px' }}
-              />
-              <img
+              />) : (<div></div>)
+              )}
+              {(singleProject.image_four ? 
+              (<img
                 src={singleProject.image_four.asset.url}
                 alt={singleProject.title}
                 className='w-full object-cover rounded-t'
                 style={{ height: '350px' }}
-              />
+              />) : (<div></div>)
+              )}
             </div>
             <div>
               <p className='mb-5'>{singleProject.description_one}</p>
